@@ -23,9 +23,6 @@
       border-bottom: 2px solid #008cff;
       padding: 20px;
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
     }
 
     header h1 {
@@ -75,25 +72,25 @@
       font-size: 30px;
     }
 
-    .produtos {
+    .produtos,
+    .avaliacoes {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 25px;
     }
 
-    .produto {
+    .produto,
+    .avaliacao,
+    form {
       background: #0b111b;
       border: 1px solid #008cff;
       border-radius: 15px;
+    }
+
+    .produto {
       padding: 25px;
       text-align: center;
       box-shadow: 0 0 15px rgba(0, 140, 255, 0.15);
-      transition: 0.3s;
-    }
-
-    .produto:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 25px rgba(0, 140, 255, 0.4);
     }
 
     .produto h3 {
@@ -106,7 +103,6 @@
       font-size: 27px;
       font-weight: bold;
       margin: 15px 0;
-      color: white;
     }
 
     .botao {
@@ -117,25 +113,16 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.2s;
     }
 
-    .botao:hover {
+    .botao:hover,
+    button:hover {
       background: #00aaff;
-      transform: scale(1.05);
-    }
-
-    .avaliacoes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
     }
 
     .avaliacao {
-      background: #0b111b;
-      border-left: 4px solid #008cff;
       padding: 20px;
-      border-radius: 10px;
+      border-left: 4px solid #008cff;
     }
 
     .estrelas {
@@ -147,10 +134,7 @@
     form {
       max-width: 600px;
       margin: auto;
-      background: #0b111b;
       padding: 25px;
-      border-radius: 15px;
-      border: 1px solid #008cff;
     }
 
     input,
@@ -163,13 +147,6 @@
       border: 1px solid #234;
       background: #05070a;
       color: white;
-      outline: none;
-    }
-
-    input:focus,
-    textarea:focus,
-    select:focus {
-      border-color: #00aaff;
     }
 
     textarea {
@@ -187,10 +164,6 @@
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
-    }
-
-    button:hover {
-      background: #00aaff;
     }
 
     footer {
@@ -242,9 +215,8 @@
         <p>Script PDX Scripts.</p>
         <div class="preco">R$ 2,00</div>
 
-        <a
-          class="botao"
-          href="https://wa.me/558391310667?text=Ol%C3%A1!%20Quero%20comprar%20o%20Lennon%20Hub%20da%20PDXHZ%20Scripts.%20Valor%3A%20R%24%202%2C00."
+        <a class="botao"
+          href="https://wa.me/558391310667?text=Ol%C3%A1!%20Quero%20comprar%20o%20Lennon%20Hub.%20Valor%3A%20R%24%202%2C00."
           target="_blank">
           Comprar pelo WhatsApp
         </a>
@@ -255,9 +227,8 @@
         <p>Script PDX Scripts.</p>
         <div class="preco">R$ 2,00</div>
 
-        <a
-          class="botao"
-          href="https://wa.me/558391310667?text=Ol%C3%A1!%20Quero%20comprar%20o%20Miranda%20da%20PDXHZ%20Scripts.%20Valor%3A%20R%24%202%2C00."
+        <a class="botao"
+          href="https://wa.me/558391310667?text=Ol%C3%A1!%20Quero%20comprar%20o%20Miranda.%20Valor%3A%20R%24%202%2C00."
           target="_blank">
           Comprar pelo WhatsApp
         </a>
@@ -268,9 +239,8 @@
         <p>Nova versão do script PDX Scripts.</p>
         <div class="preco">R$ 3,00</div>
 
-        <a
-          class="botao"
-          href="https://wa.me/558391310667?text=Ol%C3%A1!%20Quero%20comprar%20o%20Miranda%20Novo%20da%20PDXHZ%20Scripts.%20Valor%3A%20R%24%203%2C00."
+        <a class="botao"
+          href="https://wa.me/558391310667?text=Ol%C3%A1!%20Quero%20comprar%20o%20Miranda%20Novo.%20Valor%3A%20R%24%203%2C00."
           target="_blank">
           Comprar pelo WhatsApp
         </a>
@@ -311,9 +281,7 @@
   <section id="comentarios">
     <h2 class="titulo">💬 Deixe seu comentário</h2>
 
-    <form
-      action="https://formspree.io/f/xwlpllyl"
-      method="POST">
+    <form action="https://formspree.io/f/xwlpllyl" method="POST">
 
       <input
         type="text"
@@ -341,9 +309,7 @@
         placeholder="Escreva seu comentário..."
         required></textarea>
 
-      <button type="submit">
-        Enviar comentário
-      </button>
+      <button type="submit">Enviar comentário</button>
 
     </form>
   </section>
