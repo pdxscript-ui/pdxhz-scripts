@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PDX Scripts — scripts e ferramentas para seus projetos.">
+  <title>PDX Scripts | Scripts & Ferramentas</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #03070d;
+      --card: rgba(10, 18, 30, .82);
+      --blue: #09a5ff;
+      --blue2: #006eff;
+      --text: #f5f8ff;
+      --muted: #9ba9bb;
+      --line: rgba(20, 157, 255, .35);
+      --green: #20d66b;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 50% -10%, rgba(0, 132, 255, .28), transparent 38%),
+        radial-gradient(circle at 90% 30%, rgba(0, 77, 255, .12), transparent 30%),
+        var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size: 45px 45px;
+      mask-image: linear-gradient(to bottom, black, transparent 75%);
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px 50px;
+      position: relative;
+    }
+
+    .hero { max-width: 850px; animation: fadeUp .9s ease both; }
+
+    .badge {
+      display: inline-block;
+      padding: 9px 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #8fd5ff;
+      background: rgba(0, 135, 255, .08);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 12vw, 82px);
+      line-height: .95;
+      letter-spacing: -3px;
+      margin-bottom: 22px;
+    }
+
+    h1 span, .section-title span { color: var(--blue); }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+      font-size: clamp(17px, 4vw, 21px);
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 25px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: .25s;
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--blue), var(--blue2));
+      box-shadow: 0 0 28px rgba(0, 145, 255, .28);
+    }
+
+    .btn-secondary {
+      color: white;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+    }
+
+    .btn:hover { transform: translateY(-3px); }
+
+    section {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 8vw, 50px);
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      position: relative;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(12,24,40,.92), rgba(5,11,19,.86));
+      box-shadow: 0 18px 50px rgba(0,0,0,.28);
+      overflow: hidden;
+      transition: .3s;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      top: -90px;
+      right: -70px;
+      background: rgba(0, 160, 255, .22);
+      filter: blur(35px);
+      border-radius: 50%;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(0, 174, 255, .75);
+      box-shadow: 0 22px 60px rgba(0, 119, 255, .14);
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(0, 158, 255, .1);
+      border: 1px solid var(--line);
+      font-size: 27px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 { font-size: 29px; margin-bottom: 10px; }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.6;
+      min-height: 52px;
+    }
+
+    .price {
+      font-size: 42px;
+      font-weight: 900;
+      margin: 25px 0;
+    }
+
+    .price small {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .buy {
+      width: 100%;
+      min-height: 56px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #10c968, #079b4c);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-weight: 900;
+      box-shadow: 0 10px 30px rgba(13, 207, 100, .16);
+      transition: .25s;
+    }
+
+    .buy:hover { transform: scale(1.02); }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .feature {
+      padding: 25px 20px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .feature strong {
+      display: block;
+      margin: 12px 0 7px;
+      font-size: 18px;
+    }
+
+    .feature p { color: var(--muted); font-size: 14px; line-height: 1.5; }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 35px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--green);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+      .products, .features { grid-template-columns: 1fr; }
+      header { min-height: 88vh; }
+      section { padding: 65px 16px; }
+      .card { padding: 24px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="hero">
+      <div class="badge">⚡ PDX SCRIPTS</div>
+      <h1>Scripts <span>&</span><br>Ferramentas.</h1>
+      <p>Produtos digitais simples, rápidos e feitos para deixar seus projetos mais completos.</p>
+
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#produtos">Ver produtos</a>
+        <a class="btn btn-secondary" href="#sobre">Conhecer</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="produtos">
+      <div class="section-heading">
+        <h2 class="section-title">Nossos <span>produtos</span></h2>
+        <p class="section-subtitle">Escolha o produto e fale diretamente pelo WhatsApp.</p>
+      </div>
+
+      <div class="products">
+        <article class="card">
+          <div class="icon">🛒</div>
+          <h3>Lennon Hub</h3>
+          <p>Script PDX Scripts com acesso rápido e suporte pelo WhatsApp.</p>
+          <div class="price">R$ 2,00 <small>pagamento único</small></div>
+          <!-- TROQUE O NÚMERO ABAIXO PELO SEU WHATSAPP -->
+          <a class="buy" href="https://wa.me/558391310667?text=Olá!%20Quero%20comprar%20o%20Lennon%20Hub." target="_blank">💬 Comprar pelo WhatsApp</a>
+        </article>
+
+        <article class="card">
+          <div class="icon">🚀</div>
+          <h3>Miranda</h3>
+          <p>Script PDX Scripts para quem procura uma ferramenta prática e direta.</p>
+          <div class="price">R$ 2,00 <small>pagamento único</small></div>
+          <!-- TROQUE O NÚMERO ABAIXO PELO SEU WHATSAPP -->
+          <a class="buy" href="https://wa.me/558391310667?text=Olá!%20Quero%20comprar%20o%20Miranda." target="_blank">💬 Comprar pelo WhatsApp</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="section-heading">
+        <h2 class="section-title">Por que <span>PDX?</span></h2>
+        <p class="section-subtitle">Menos complicação. Mais objetividade.</p>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <div style="font-size:30px">⚡</div>
+          <strong>Rápido</strong>
+          <p>Acesso direto ao produto e atendimento.</p>
+        </div>
+        <div class="feature">
+          <div style="font-size:30px">🛡️</div>
+          <strong>Direto</strong>
+          <p>Informações claras, sem páginas desnecessárias.</p>
+        </div>
+        <div class="feature">
+          <div style="font-size:30px">💬</div>
+          <strong>WhatsApp</strong>
+          <p>Contato simples para tirar dúvidas e comprar.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>PDX SCRIPTS</strong>
+    <div class="status"><span class="dot"></span> Site online</div>
+    <p style="margin-top:12px">© 2026 PDX Scripts. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
