@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Guia prático para dar os primeiros passos e buscar sua primeira venda na Kiwify.">
+<title>Primeira Venda na Kiwify | Guia Prático</title>
+<style>
+:root{
+  --bg:#07110d;--bg2:#0b1913;--card:#0f2119;--card2:#12291f;
+  --text:#f5fff9;--muted:#a8bdb2;--green:#48e58b;--green2:#22c96d;
+  --line:rgba(255,255,255,.10);--gold:#ffd76a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+radial-gradient(circle at 50% -5%,rgba(43,151,91,.25),transparent 36%),
+linear-gradient(180deg,var(--bg),#050b08 75%);color:var(--text);
+font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+a{text-decoration:none;color:inherit}.wrap{width:min(1060px,calc(100% - 36px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(7,17,13,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;font-size:19px}.logo b{color:var(--green)}
+.nav a{border:1px solid rgba(72,229,139,.3);color:var(--green);padding:9px 15px;border-radius:999px;font-size:13px;font-weight:800}
+.hero{text-align:center;padding:78px 0 64px}
+.badge{display:inline-block;padding:7px 13px;border:1px solid rgba(72,229,139,.28);background:rgba(72,229,139,.08);color:var(--green);border-radius:999px;font-size:12px;font-weight:900;letter-spacing:.5px}
+h1{font-size:clamp(42px,7vw,76px);line-height:1;letter-spacing:-3px;max-width:900px;margin:20px auto 18px}
+.hero p{font-size:19px;color:var(--muted);max-width:720px;margin:0 auto 28px}
+.cta{display:inline-flex;justify-content:center;align-items:center;background:var(--green);color:#04150b;padding:16px 25px;border-radius:13px;font-weight:950;box-shadow:0 12px 35px rgba(72,229,139,.18);transition:.2s}
+.cta:hover{transform:translateY(-2px);background:#65eda0}
+.micro{display:block;color:#72877c;font-size:12px;margin-top:10px}
+.trust{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px;color:#b9c9c1;font-size:13px}
+.trust span{border:1px solid var(--line);background:rgba(255,255,255,.025);padding:7px 11px;border-radius:999px}
+section{padding:62px 0}
+.title{text-align:center;font-size:34px;line-height:1.15;letter-spacing:-1px;margin:0 0 10px}
+.lead{text-align:center;color:var(--muted);max-width:680px;margin:0 auto 34px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{background:linear-gradient(145deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;padding:24px}
+.icon{font-size:28px}.card h3{margin:10px 0 6px}.card p{margin:0;color:var(--muted);font-size:15px}
+.steps{max-width:800px;margin:auto;display:grid;gap:13px}
+.step{display:flex;gap:17px;padding:20px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.025)}
+.num{flex:0 0 38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#04150b;font-weight:950}
+.step h3{margin:0 0 3px}.step p{margin:0;color:var(--muted)}
+.note{max-width:800px;margin:22px auto 0;padding:15px 17px;border-left:3px solid var(--green);background:rgba(72,229,139,.055);color:#b9cbc2;border-radius:0 10px 10px 0;font-size:14px}
+.offer{max-width:770px;margin:auto;text-align:center;padding:42px 25px;border-radius:25px;
+background:linear-gradient(145deg,#123824,#0b1c14);border:1px solid rgba(72,229,139,.3);
+box-shadow:0 25px 80px rgba(0,0,0,.3)}
+.offer h2{font-size:32px;margin:13px 0 4px}
+.price{font-size:62px;font-weight:950;letter-spacing:-3px;line-height:1.05;margin:12px 0}
+.price small{font-size:18px;letter-spacing:0;color:var(--muted)}
+.checks{display:grid;gap:8px;text-align:left;max-width:450px;margin:24px auto;color:#dceae3}
+.faq{max-width:800px;margin:auto}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:850}
+details p{color:var(--muted);margin:10px 0 0}
+.final{text-align:center;padding:70px 0 90px}
+footer{border-top:1px solid var(--line);padding:25px 0;text-align:center;color:#71867b;font-size:12px}
+@media(max-width:760px){
+  .wrap{width:min(100% - 26px,1060px)}
+  .nav a{display:none}.hero{padding:58px 0 48px}
+  h1{letter-spacing:-2px;font-size:clamp(40px,12vw,58px)}
+  .hero p{font-size:17px}.grid{grid-template-columns:1fr}
+  section{padding:48px 0}.title{font-size:29px}
+  .offer h2{font-size:27px}.price{font-size:54px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="logo">Primeira <b>Venda</b> na Kiwify</div>
+    <a href="#comprar">Quero começar</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">GUIA PRÁTICO • FOCO NA KIWIFY</span>
+    <h1>Aprenda os primeiros passos para buscar sua primeira venda na Kiwify.</h1>
+    <p>Um guia direto para quem está começando e quer entender como organizar a oferta, divulgar e acompanhar as primeiras vendas dentro da plataforma.</p>
+    <a class="cta" href="https://wa.me/558391310667?text=Ol%C3%A1%21%20Quero%20comprar%20o%20guia%20Primeira%20Venda%20na%20Kiwify." target="_blank" rel="noopener">🛒 QUERO O GUIA POR R$ 10</a>
+    <span class="micro">Pagamento único • material digital</span>
+    <div class="trust">
+      <span>📱 Feito para iniciantes</span><span>🎯 Passo a passo</span><span>💬 Suporte pelo WhatsApp</span>
+    </div>
+  </div>
+</section>
+
+<section>
+<div class="wrap">
+  <h2 class="title">O que você vai encontrar no guia</h2>
+  <p class="lead">Conteúdo organizado para você não ficar perdido tentando descobrir tudo sozinho.</p>
+  <div class="grid">
+    <article class="card"><div class="icon">🟢</div><h3>Entendendo a Kiwify</h3><p>Conheça a plataforma e entenda o papel dela no processo de venda de produtos digitais.</p></article>
+    <article class="card"><div class="icon">🎯</div><h3>Preparando sua oferta</h3><p>Organize produto, público, preço e uma chamada clara para a pessoa saber o que está sendo oferecido.</p></article>
+    <article class="card"><div class="icon">📲</div><h3>Divulgação</h3><p>Aprenda princípios para apresentar sua oferta e levar pessoas interessadas até o seu link de venda.</p></article>
+    <article class="card"><div class="icon">🔗</div><h3>Link de venda</h3><p>Entenda a importância de usar o link correto e direcionar o interessado para o checkout.</p></article>
+    <article class="card"><div class="icon">💬</div><h3>Atendimento</h3><p>Veja como conduzir dúvidas e conversar com potenciais clientes de maneira objetiva.</p></article>
+    <article class="card"><div class="icon">📊</div><h3>Acompanhar vendas</h3><p>Aprenda onde observar suas vendas e acompanhar o que está acontecendo com seus resultados.</p></article>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <h2 class="title">Seu caminho até a primeira venda</h2>
+  <p class="lead">Uma sequência simples para colocar o aprendizado em prática.</p>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div><h3>Configure o básico</h3><p>Tenha sua conta e sua estrutura de venda organizadas antes de começar a divulgar.</p></div></div>
+    <div class="step"><div class="num">2</div><div><h3>Escolha o que vender</h3><p>Defina o produto e entenda para quem a oferta faz sentido.</p></div></div>
+    <div class="step"><div class="num">3</div><div><h3>Prepare sua divulgação</h3><p>Crie uma comunicação simples, sem prometer resultados que você não pode garantir.</p></div></div>
+    <div class="step"><div class="num">4</div><div><h3>Leve pessoas para a oferta</h3><p>Divulgue de forma consistente e acompanhe as respostas e dúvidas.</p></div></div>
+    <div class="step"><div class="num">5</div><div><h3>Acompanhe e ajuste</h3><p>Observe o que funciona, corrija a comunicação e continue testando.</p></div></div>
+  </div>
+  <div class="note">O guia ensina um processo para começar. Ele não promete que uma venda acontecerá em determinado prazo ou que haverá renda garantida.</div>
+</div>
+</section>
+
+<section id="comprar">
+<div class="wrap">
+  <div class="offer">
+    <span class="badge">ACESSO AO GUIA</span>
+    <h2>Primeira Venda na Kiwify</h2>
+    <p class="lead" style="margin-bottom:5px">Material digital para quem está começando.</p>
+    <div class="price">R$ 10<small>,00</small></div>
+    <div class="checks">
+      <div>✓ Guia focado nos primeiros passos na Kiwify</div>
+      <div>✓ Conteúdo direto e fácil de acompanhar</div>
+      <div>✓ Pagamento único</div>
+      <div>✓ Atendimento pelo WhatsApp para a compra</div>
+    </div>
+    <a class="cta" href="https://wa.me/558391310667?text=Ol%C3%A1%21%20Quero%20comprar%20o%20guia%20Primeira%20Venda%20na%20Kiwify." target="_blank" rel="noopener">🟢 COMPRAR AGORA POR R$ 10</a>
+    <span class="micro">O botão abre o WhatsApp para combinar pagamento e entrega.</span>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <h2 class="title">Perguntas frequentes</h2>
+  <div class="faq">
+    <details><summary>O guia é sobre a Kiwify?</summary><p>Sim. O foco do material é orientar quem está começando e quer buscar a primeira venda usando a Kiwify.</p></details>
+    <details><summary>Preciso ter experiência?</summary><p>Não. O material foi pensado para iniciantes e explica os conceitos e passos de forma direta.</p></details>
+    <details><summary>É curso em vídeo?</summary><p>Não. A oferta desta página é um guia digital.</p></details>
+    <details><summary>O pagamento é mensal?</summary><p>Não. O preço apresentado nesta página é um pagamento único de R$ 10,00.</p></details>
+    <details><summary>A compra garante minha primeira venda?</summary><p>Não. O guia apresenta um caminho e orientações práticas, mas nenhum material pode garantir que uma venda acontecerá em determinado prazo.</p></details>
+    <details><summary>Como compro?</summary><p>Clique em qualquer botão de compra. Você será direcionado ao WhatsApp para combinar o pagamento e receber o material.</p></details>
+  </div>
+</div>
+</section>
+
+<section class="final">
+<div class="wrap">
+  <h2 class="title">Quer começar pela Kiwify?</h2>
+  <p class="lead">Tenha um guia simples para entender o caminho e começar a colocar em prática.</p>
+  <a class="cta" href="https://wa.me/558391310667?text=Ol%C3%A1%21%20Quero%20comprar%20o%20guia%20Primeira%20Venda%20na%20Kiwify." target="_blank" rel="noopener">🛒 QUERO O GUIA POR R$ 10</a>
+</div>
+</section>
+</main>
+
+<footer>© 2026 • Primeira Venda na Kiwify</footer>
+</body>
+</html>
