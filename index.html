@@ -1,361 +1,164 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PDXHZ Scripts</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>Como Fazer Sua Primeira Venda</title>
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #05070a;
-      color: white;
-    }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
-    header {
-      background: #07111f;
-      border-bottom: 2px solid #008cff;
-      padding: 20px;
-      text-align: center;
-    }
+body{
+background:#f5f5f5;
+color:#222;
+}
 
-    header h1 {
-      color: #00aaff;
-      text-shadow: 0 0 12px #008cff;
-      margin-bottom: 12px;
-    }
+.container{
+max-width:500px;
+margin:auto;
+padding:20px;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-    }
+.card{
+background:white;
+padding:25px;
+border-radius:20px;
+margin-bottom:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.10);
+}
 
-    nav a:hover {
-      color: #00aaff;
-    }
+h1{
+color:#ff5a00;
+text-align:center;
+font-size:30px;
+}
 
-    .hero {
-      text-align: center;
-      padding: 70px 20px;
-      background: radial-gradient(circle, #092344, #05070a 65%);
-    }
+h2{
+margin-bottom:15px;
+}
 
-    .hero h2 {
-      font-size: 40px;
-      color: #00aaff;
-      margin-bottom: 15px;
-    }
+p{
+line-height:1.6;
+}
 
-    .hero p {
-      color: #ccc;
-      font-size: 18px;
-    }
+.price{
+text-align:center;
+font-size:45px;
+font-weight:bold;
+color:#16a34a;
+margin:20px;
+}
 
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 50px 20px;
-    }
+.item{
+margin:12px 0;
+font-size:17px;
+}
 
-    .titulo {
-      text-align: center;
-      color: #00aaff;
-      margin-bottom: 30px;
-      font-size: 30px;
-    }
+.btn{
+display:block;
+background:#25d366;
+color:white;
+text-decoration:none;
+text-align:center;
+padding:18px;
+border-radius:50px;
+font-size:20px;
+font-weight:bold;
+margin-top:20px;
+}
 
-    .produtos,
-    .avaliacoes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 25px;
-    }
+.center{
+text-align:center;
+}
+</style>
 
-    .produto,
-    .avaliacao,
-    form {
-      background: #0b111b;
-      border: 1px solid #008cff;
-      border-radius: 15px;
-    }
-
-    .produto {
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 0 15px rgba(0, 140, 255, 0.15);
-    }
-
-    .produto h3 {
-      color: #00aaff;
-      margin-bottom: 12px;
-      font-size: 23px;
-    }
-
-    .preco {
-      font-size: 27px;
-      font-weight: bold;
-      margin: 15px 0;
-    }
-
-    .botao {
-      display: inline-block;
-      background: #008cff;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .botao:hover,
-    button:hover {
-      background: #00aaff;
-    }
-
-    .avaliacao {
-      padding: 20px;
-      border-left: 4px solid #008cff;
-    }
-
-    .estrelas {
-      color: #00aaff;
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    form {
-      max-width: 600px;
-      margin: auto;
-      padding: 25px;
-    }
-
-    input,
-    textarea,
-    select {
-      width: 100%;
-      padding: 13px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      border: 1px solid #234;
-      background: #05070a;
-      color: white;
-    }
-
-    textarea {
-      min-height: 130px;
-      resize: vertical;
-    }
-
-    button {
-      width: 100%;
-      padding: 13px;
-      border: none;
-      border-radius: 8px;
-      background: #008cff;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      border-top: 1px solid #008cff;
-      color: #888;
-      margin-top: 30px;
-    }
-
-    @media (max-width: 600px) {
-      .hero h2 {
-        font-size: 30px;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 5px;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>⚡ PDXHZ SCRIPTS</h1>
+<div class="container">
 
-    <nav>
-      <a href="#inicio">Início</a>
-      <a href="#produtos">Produtos</a>
-      <a href="#avaliacoes">Avaliações</a>
-      <a href="#comentarios">Comentários</a>
-    </nav>
-  </header>
+<div class="card center">
+<h1>🔥 Como Fazer Sua Primeira Venda</h1>
 
-  <section class="hero" id="inicio">
-    <h2>PDXHZ Scripts</h2>
-    <p>Scripts e ferramentas para seus projetos.</p>
-  </section>
+<p>
+Aprenda o passo a passo para conseguir sua primeira venda pela internet, mesmo começando do zero.
+</p>
 
-  <section id="produtos">
-    <h2 class="titulo">🛒 Produtos</h2>
-
-    <div class="produtos">
-
-      <div class="produto">
-    <h3>🟡 Lennon Hub</h3><img src="IMG-20260921-WA0026.jpg" alt="Lennon Hub">
-    <p>Script PDX Scripts.</p>
-    <div class="preco">Preço: consultar</div>
-    <a class="botao"
-       href="https://wa.me/558391310667?text=Quero%20comprar%20o%20Lennon%20Hub"
-       target="_blank">
-       Comprar pelo WhatsApp
-    </a>
+<div class="price">
+R$ 10,00
 </div>
 
-<div class="produto">
-    <h3>🔴 Miranda Hub</h3>
-    <p>Script PDX Scripts.</p>
-    <div class="preco">Preço: consultar</div>
-    <a class="botao"
-       href="https://wa.me/558391310667?text=Quero%20comprar%20o%20Miranda%20Hub"
-       target="_blank">
-       Comprar pelo WhatsApp
-    </a>
+<a class="btn" href="https://wa.me/558391310667">
+🚀 QUERO COMEÇAR AGORA
+</a>
+
 </div>
 
-<div class="produto">
-    <h3>🔴 Miranda Hub — Atualizado</h3>
-    <p>Nova versão atualizada do Miranda Hub.</p>
-    <div class="preco">Preço: consultar</div>
-    <a class="botao"
-       href="https://wa.me/558391310667?text=Quero%20comprar%20o%20Miranda%20Hub%20Atualizado"
-       target="_blank">
-       Comprar pelo WhatsApp
-    </a>
+
+<div class="card">
+
+<h2>🎁 Benefícios de comprar</h2>
+
+<div class="item">✅ Método simples para iniciantes</div>
+<div class="item">✅ Estratégias para encontrar clientes</div>
+<div class="item">✅ Aprenda pelo celular</div>
+<div class="item">✅ Suporte pelo WhatsApp</div>
+
 </div>
 
-<div class="produto">
-    <h3>🍀 Clover Hub — Atualizado</h3>
-    <p>Versão atualizada do Clover Hub.</p>
-    <div class="preco">Preço: consultar</div>
-    <a class="botao"
-       href="https://wa.me/558391310667?text=Quero%20comprar%20o%20Clover%20Hub%20Atualizado"
-       target="_blank">
-       Comprar pelo WhatsApp
-    </a>
+
+<div class="card">
+
+<h2>📚 O que você vai aprender</h2>
+
+<div class="item">🔥 Como divulgar seu produto</div>
+<div class="item">🔥 Como criar ofertas</div>
+<div class="item">🔥 Como conversar com clientes</div>
+<div class="item">🔥 Como fazer sua primeira venda</div>
+
 </div>
 
-<div class="produto">
-    <h3>🟣 Fake Admin</h3>
-    <p>Script Fake Admin.</p>
-    <div class="preco">Preço: consultar</div>
-    <a class="botao"
-       href="https://wa.me/558391310667?text=Quero%20comprar%20o%20Fake%20Admin"
-       target="_blank">
-       Comprar pelo WhatsApp
-    </a>
+
+<div class="card">
+
+<h2>❓ Perguntas frequentes</h2>
+
+<p><b>Preciso ter experiência?</b><br>
+Não. É feito para iniciantes.</p>
+<br>
+
+<p><b>Funciona pelo celular?</b><br>
+Sim, você pode começar usando apenas o celular.</p>
+<br>
+
+<p><b>Como recebo o acesso?</b><br>
+Clique no botão e fale comigo pelo WhatsApp.</p>
+
 </div>
 
-<div class="produto">
-    <h3>🟡 Lennon Hub — Atualizado</h3>
-    <p>Nova versão atualizada do Lennon Hub.</p>
-    <div class="preco">Preço: consultar</div>
-    <a class="botao"
-       href="https://wa.me/558391310667?text=Quero%20comprar%20o%20Lennon%20Hub%20Atualizado"
-       target="_blank">
-       Comprar pelo WhatsApp
-    </a>
+
+<div class="card center">
+
+<h2>🚀 Comece agora</h2>
+
+<p>
+Dê o primeiro passo para fazer sua primeira venda.
+</p>
+
+<a class="btn" href="https://wa.me/558391310667">
+💬 FALAR NO WHATSAPP
+</a>
+
 </div>
 
-<div class="produto">
-    <h3>🔵 Anon Script Hub</h3>
-    <p>Anon Script Hub.</p>
-    <div class="preco">Preço: consultar</div>
-    <a class="botao"
-       href="https://wa.me/558391310667?text=Quero%20comprar%20o%20Anon%20Script%20Hub"
-       target="_blank">
-       Comprar pelo WhatsApp
-    </a>
 </div>
-  </section>
-
-  <section id="avaliacoes">
-    <h2 class="titulo">⭐ Avaliações</h2>
-
-    <div class="avaliacoes">
-
-      <div class="avaliacao">
-        <div class="estrelas">★★★★★</div>
-        <p>"Gostei bastante dos scripts!"</p>
-        <br>
-        <strong>Cliente</strong>
-      </div>
-
-      <div class="avaliacao">
-        <div class="estrelas">★★★★★</div>
-        <p>"Compra rápida e simples."</p>
-        <br>
-        <strong>Cliente</strong>
-      </div>
-
-      <div class="avaliacao">
-        <div class="estrelas">★★★★☆</div>
-        <p>"Gostei do produto."</p>
-        <br>
-        <strong>Cliente</strong>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="comentarios">
-    <h2 class="titulo">💬 Deixe seu comentário</h2>
-
-    <form action="https://formspree.io/f/xwlpllyl" method="POST">
-
-      <input
-        type="text"
-        name="nome"
-        placeholder="Seu nome"
-        required>
-
-      <input
-        type="email"
-        name="email"
-        placeholder="Seu e-mail"
-        required>
-
-      <select name="nota" required>
-        <option value="">Escolha uma nota</option>
-        <option value="5">★★★★★ — 5 estrelas</option>
-        <option value="4">★★★★☆ — 4 estrelas</option>
-        <option value="3">★★★☆☆ — 3 estrelas</option>
-        <option value="2">★★☆☆☆ — 2 estrelas</option>
-        <option value="1">★☆☆☆☆ — 1 estrela</option>
-      </select>
-
-      <textarea
-        name="comentario"
-        placeholder="Escreva seu comentário..."
-        required></textarea>
-
-      <button type="submit">Enviar comentário</button>
-
-    </form>
-  </section>
-
-  <footer>
-    © 2026 PDXHZ Scripts — Todos os direitos reservados.
-  </footer>
 
 </body>
 </html>
