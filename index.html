@@ -1,169 +1,968 @@
-DOCTYPE html>
+   <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Como Fazer Sua Primeira Venda</title>
-<meta name="description" content="Aprenda o passo a passo para começar a vender pela internet, mesmo sendo iniciante.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07110d">
+<meta name="description" content="Curso prático para aprender a criar seu próprio site do zero.">
+<title>Como Criar Seu Site | PDXHZ</title>
+
 <style>
 :root{
-  --bg:#07030f;
-  --bg2:#120621;
-  --card:rgba(25,12,43,.82);
-  --line:rgba(190,120,255,.20);
-  --text:#fff;
-  --muted:#c5b9d5;
-  --purple:#a855f7;
-  --pink:#ec4899;
-  --green:#25d366;
+  --bg:#050b08;
+  --bg2:#09150f;
+  --card:#0d1b14;
+  --card2:#102219;
+  --green:#48e58b;
+  --green2:#21c76b;
+  --gold:#ffd76a;
+  --white:#f5fff9;
+  --muted:#a8b9b0;
+  --line:rgba(255,255,255,.09);
+  --shadow:0 22px 70px rgba(0,0,0,.35);
 }
+
 *{box-sizing:border-box}
+
 html{scroll-behavior:smooth}
+
 body{
-  margin:0;color:var(--text);
-  font-family:Arial,Helvetica,sans-serif;
+  margin:0;
   background:
-    radial-gradient(circle at 10% 0%,rgba(168,85,247,.28),transparent 30%),
-    radial-gradient(circle at 95% 15%,rgba(236,72,153,.20),transparent 28%),
-    linear-gradient(180deg,var(--bg),var(--bg2));
-  min-height:100vh;
+    radial-gradient(circle at 15% 0%,rgba(72,229,139,.13),transparent 28%),
+    radial-gradient(circle at 90% 15%,rgba(255,215,106,.08),transparent 25%),
+    var(--bg);
+  color:var(--white);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.6;
 }
-body:after{
-  content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;
-  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px);
-  background-size:100% 4px;
+
+a{
+  text-decoration:none;
+  color:inherit;
 }
-.container{max-width:620px;margin:auto;padding:18px 16px 50px}
+
+.container{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(5,11,8,.78);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+
+.logo{
+  font-weight:900;
+  letter-spacing:.08em;
+}
+
+.logo span{
+  color:var(--green);
+}
+
+.nav a{
+  color:var(--muted);
+  font-size:14px;
+  font-weight:700;
+  padding:9px 12px;
+  border-radius:10px;
+}
+
+.nav a:hover{
+  color:var(--white);
+  background:rgba(255,255,255,.05);
+}
+
 .hero{
-  text-align:center;padding:34px 18px 28px;margin-bottom:18px;
-  position:relative;
+  padding:78px 0 55px;
+  text-align:center;
 }
+
 .badge{
-  display:inline-block;padding:8px 13px;border-radius:999px;
-  background:rgba(168,85,247,.12);border:1px solid rgba(168,85,247,.3);
-  color:#dfb8ff;font-size:12px;font-weight:800;letter-spacing:.6px;
-  text-transform:uppercase;margin-bottom:16px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 13px;
+  border:1px solid rgba(72,229,139,.28);
+  background:rgba(72,229,139,.08);
+  border-radius:999px;
+  color:var(--green);
+  font-size:13px;
+  font-weight:800;
 }
+
 h1{
-  margin:0 auto 14px;max-width:560px;
-  font-size:clamp(31px,8vw,48px);line-height:1.04;
-  background:linear-gradient(90deg,#fff,#d8b4fe,#f9a8d4);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
+  font-size:clamp(38px,7vw,72px);
+  line-height:1.02;
+  margin:22px auto 18px;
+  max-width:900px;
+  letter-spacing:-.045em;
 }
-.hero p{max-width:500px;margin:auto;color:var(--muted);font-size:17px;line-height:1.6}
-.card{
-  position:relative;overflow:hidden;
-  background:linear-gradient(145deg,rgba(30,15,50,.94),rgba(12,6,24,.94));
-  border:1px solid var(--line);border-radius:24px;
-  padding:25px 21px;margin-bottom:18px;
-  box-shadow:0 18px 55px rgba(0,0,0,.34);
-  backdrop-filter:blur(12px);
+
+h1 span{
+  color:var(--green);
 }
-.card:before{
-  content:"";position:absolute;width:150px;height:150px;
-  right:-80px;top:-80px;background:var(--purple);
-  filter:blur(70px);opacity:.18;
+
+.hero p{
+  max-width:720px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:18px;
 }
-.card h2{margin:0 0 16px;font-size:21px}
-.price{
-  text-align:center;font-size:52px;font-weight:900;
-  margin:14px 0 4px;text-shadow:0 0 35px rgba(168,85,247,.38);
+
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
 }
-.price-note{text-align:center;color:#9f91b3;font-size:13px;margin-bottom:18px}
+
 .btn{
-  display:block;text-align:center;text-decoration:none;color:#fff;
-  padding:18px 15px;border-radius:15px;font-size:18px;font-weight:900;
-  background:linear-gradient(135deg,var(--purple),var(--pink));
-  box-shadow:0 12px 32px rgba(168,85,247,.28);
-  transition:.2s ease;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:9px;
+  min-height:50px;
+  padding:0 20px;
+  border-radius:13px;
+  font-weight:900;
+  border:1px solid var(--line);
+  transition:.2s;
 }
-.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
-.item{
-  margin:10px 0;padding:13px 14px;border-radius:13px;
-  background:rgba(255,255,255,.045);
-  border:1px solid rgba(255,255,255,.06);color:#e5deed;
-  line-height:1.45;
+
+.btn:hover{
+  transform:translateY(-2px);
 }
+
+.btn.primary{
+  background:var(--green);
+  color:#031008;
+  border-color:var(--green);
+}
+
+.btn.secondary{
+  background:rgba(255,255,255,.04);
+}
+
+.section{
+  padding:62px 0;
+}
+
+.section-title{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 34px;
+}
+
+.section-title h2{
+  font-size:clamp(28px,4vw,42px);
+  margin:0 0 9px;
+  letter-spacing:-.03em;
+}
+
+.section-title p{
+  margin:0;
+  color:var(--muted);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.card{
+  background:linear-gradient(180deg,var(--card2),var(--card));
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:24px;
+  box-shadow:var(--shadow);
+}
+
+.icon{
+  width:44px;
+  height:44px;
+  border-radius:13px;
+  display:grid;
+  place-items:center;
+  background:rgba(72,229,139,.1);
+  color:var(--green);
+  font-size:21px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  margin:0 0 8px;
+  font-size:19px;
+}
+
+.card p{
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+}
+
+.steps{
+  display:grid;
+  gap:14px;
+  max-width:850px;
+  margin:auto;
+}
+
+.step{
+  display:grid;
+  grid-template-columns:48px 1fr;
+  gap:16px;
+  align-items:start;
+  padding:20px;
+  border:1px solid var(--line);
+  border-radius:17px;
+  background:rgba(255,255,255,.025);
+}
+
+.num{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background:var(--green);
+  color:#031008;
+  font-weight:1000;
+}
+
+.step h3{
+  margin:0 0 4px;
+}
+
+.step p{
+  margin:0;
+  color:var(--muted);
+}
+
+.help{
+  margin-top:35px;
+  padding:38px;
+  border-radius:25px;
+  border:1px solid rgba(255,215,106,.22);
+  background:
+    radial-gradient(circle at 100% 0%,rgba(255,215,106,.11),transparent 35%),
+    linear-gradient(135deg,#151d13,#0b1710);
+  text-align:center;
+}
+
+.help .mini{
+  color:var(--gold);
+  font-weight:900;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+
+.help h2{
+  font-size:clamp(28px,5vw,46px);
+  margin:9px 0 10px;
+  line-height:1.08;
+}
+
+.help p{
+  color:var(--muted);
+  max-width:650px;
+  margin:0 auto;
+}
+
+.service{
+  max-width:900px;
+  margin:auto;
+  border:1px solid rgba(72,229,139,.24);
+  border-radius:26px;
+  padding:30px;
+  background:linear-gradient(145deg,#10251a,#0a1510);
+  box-shadow:0 30px 90px rgba(0,0,0,.4);
+}
+
+.service-top{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:start;
+}
+
+.service h2{
+  margin:0;
+  font-size:32px;
+}
+
+.price{
+  white-space:nowrap;
+  text-align:right;
+}
+
+.price small{
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.price strong{
+  font-size:27px;
+  color:var(--green);
+}
+
+.list{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:25px 0;
+}
+
+.list div{
+  color:#d8e5dd;
+  font-size:14px;
+}
+
+.list div::before{
+  content:"✓";
+  color:var(--green);
+  font-weight:900;
+  margin-right:9px;
+}
+
+.note{
+  font-size:12px;
+  color:#7f9288;
+  margin-top:12px;
+}
+
 .faq{
-  border-top:1px solid rgba(255,255,255,.08);padding:15px 0 2px;
+  max-width:850px;
+  margin:auto;
 }
-.faq:first-of-type{border-top:0}
-.faq summary{cursor:pointer;font-weight:800;list-style:none}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary:after{content:"+";float:right;color:#d8a7ff;font-size:22px}
-.faq[open] summary:after{content:"−"}
-.faq p{color:var(--muted);line-height:1.55;margin:10px 0 3px}
-.final{border-color:rgba(37,211,102,.22)}
-.final .btn{
-  background:linear-gradient(135deg,#25d366,#16a34a);
-  box-shadow:0 12px 32px rgba(37,211,102,.22);
+
+details{
+  border-bottom:1px solid var(--line);
+  padding:18px 0;
 }
-.small{text-align:center;color:#81768f;font-size:12px;margin-top:20px}
-@media(max-width:430px){
-  .container{padding:10px 12px 36px}
-  .hero{padding:28px 8px 20px}
-  .card{padding:22px 17px;border-radius:20px}
-  .price{font-size:45px}
+
+summary{
+  cursor:pointer;
+  font-weight:800;
+  list-style:none;
+}
+
+summary::-webkit-details-marker{
+  display:none;
+}
+
+summary:after{
+  content:"+";
+  float:right;
+  color:var(--green);
+  font-size:22px;
+}
+
+details[open] summary:after{
+  content:"−";
+}
+
+details p{
+  color:var(--muted);
+  margin:12px 0 0;
+}
+
+footer{
+  padding:35px 0 45px;
+  text-align:center;
+  color:#74857c;
+  border-top:1px solid var(--line);
+  font-size:13px;
+}
+
+@media(max-width:760px){
+
+  .nav a:not(.home){
+    display:none;
+  }
+
+  .hero{
+    padding-top:58px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .service-top{
+    display:block;
+  }
+
+  .price{
+    text-align:left;
+    margin-top:14px;
+  }
+
+  .list{
+    grid-template-columns:1fr;
+  }
+
+  .help{
+    padding:28px 20px;
+  }
 }
 </style>
 </head>
+
 <body>
-<main class="container">
+
+<header>
+  <div class="container nav">
+
+    <a class="logo" href="index.html">
+      PDX<span>HZ</span>
+    </a>
+
+    <nav>
+      <a class="home" href="index.html">Página inicial</a>
+      <a href="#curso">Curso</a>
+      <a href="#ajuda">Precisa de ajuda?</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
 
 <section class="hero">
-  <div class="badge">Método para iniciantes</div>
-  <h1>🔥 Como Fazer Sua Primeira Venda</h1>
-  <p>Aprenda o passo a passo para começar a vender pela internet, mesmo sendo iniciante.</p>
+
+  <div class="container">
+
+    <div class="badge">
+      🚀 CURSO PRÁTICO • DO ZERO AO SITE NO AR
+    </div>
+
+    <h1>
+      Aprenda a criar seu
+      <span>próprio site</span>
+    </h1>
+
+    <p>
+      Um passo a passo simples para você entender como criar,
+      editar e publicar um site mesmo começando do zero.
+    </p>
+
+    <div class="actions">
+
+      <a class="btn primary" href="#curso">
+        Começar o curso ↓
+      </a>
+
+      <a class="btn secondary" href="#ajuda">
+        Quero ajuda com meu site
+      </a>
+
+    </div>
+
+  </div>
+
 </section>
 
-<section class="card">
-  <h2 style="text-align:center">Comece hoje</h2>
-  <div class="price">R$ 10,00</div>
-  <div class="price-note">Pagamento único</div>
-  <a class="btn" href="https://wa.me/558391310667">🚀 QUERO COMEÇAR AGORA</a>
+
+<section class="section" id="curso">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        O que você vai aprender
+      </h2>
+
+      <p>
+        O conteúdo foi organizado para você avançar
+        sem precisar entender programação complicada.
+      </p>
+
+    </div>
+
+
+    <div class="grid">
+
+      <article class="card">
+
+        <div class="icon">🌐</div>
+
+        <h3>
+          Estrutura de um site
+        </h3>
+
+        <p>
+          Entenda como uma página funciona e quais
+          partes formam um site.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="icon">💻</div>
+
+        <h3>
+          HTML na prática
+        </h3>
+
+        <p>
+          Aprenda a criar títulos, textos, botões,
+          seções e outros elementos.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="icon">🎨</div>
+
+        <h3>
+          Visual profissional
+        </h3>
+
+        <p>
+          Aprenda a organizar cores, espaços,
+          cartões e elementos para deixar a página bonita.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="icon">📱</div>
+
+        <h3>
+          Site para celular
+        </h3>
+
+        <p>
+          Entenda como adaptar sua página para
+          diferentes tamanhos de tela.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="icon">⚡</div>
+
+        <h3>
+          Botões e links
+        </h3>
+
+        <p>
+          Aprenda a fazer botões funcionarem e
+          direcionarem o visitante para o lugar certo.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="icon">🚀</div>
+
+        <h3>
+          Publicação
+        </h3>
+
+        <p>
+          Aprenda o processo para colocar seu site
+          online e compartilhar o endereço.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
 </section>
 
-<section class="card">
-  <h2>🎁 Benefícios de comprar</h2>
-  <div class="item">✅ Método simples e fácil</div>
-  <div class="item">✅ Estratégias para sua primeira venda</div>
-  <div class="item">✅ Suporte pelo WhatsApp</div>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Passo a passo
+      </h2>
+
+      <p>
+        Siga esta sequência para transformar
+        uma ideia em uma página publicada.
+      </p>
+
+    </div>
+
+
+    <div class="steps">
+
+      <div class="step">
+
+        <div class="num">1</div>
+
+        <div>
+
+          <h3>
+            Planeje o que o site precisa ter
+          </h3>
+
+          <p>
+            Defina objetivo, público, informações,
+            imagens e botões antes de começar.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="num">2</div>
+
+        <div>
+
+          <h3>
+            Monte a estrutura
+          </h3>
+
+          <p>
+            Crie a base da página e organize
+            cabeçalho, conteúdo, ofertas e contato.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="num">3</div>
+
+        <div>
+
+          <h3>
+            Personalize o visual
+          </h3>
+
+          <p>
+            Escolha cores, fontes, tamanhos e
+            espaçamentos que combinem com o projeto.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="num">4</div>
+
+        <div>
+
+          <h3>
+            Teste no celular
+          </h3>
+
+          <p>
+            Confira textos, botões, links e
+            aparência antes de publicar.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="num">5</div>
+
+        <div>
+
+          <h3>
+            Publique e divulgue
+          </h3>
+
+          <p>
+            Coloque o projeto no ar e compartilhe
+            o endereço com seus clientes ou público.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
-<section class="card">
-  <h2>📚 O que você vai aprender</h2>
-  <div class="item">🔥 Encontrar clientes</div>
-  <div class="item">🔥 Divulgar produtos</div>
-  <div class="item">🔥 Criar ofertas</div>
-  <div class="item">🔥 Fechar vendas</div>
+
+<section class="section" id="ajuda">
+
+  <div class="container">
+
+    <div class="help">
+
+      <div class="mini">
+        Não conseguiu criar sozinho?
+      </div>
+
+      <h2>
+        Eu posso criar o seu site para você.
+      </h2>
+
+      <p>
+        Se você acompanhou o curso, tentou fazer seu site
+        e mesmo assim não conseguiu, não precisa desistir.
+        Posso cuidar da criação do seu site para você.
+      </p>
+
+      <div class="actions">
+
+        <a class="btn primary" href="#servico">
+          COMPRAR TRABALHO DE SITE →
+        </a>
+
+        <a
+          class="btn secondary"
+          href="https://wa.me/5548988473049?text=Ol%C3%A1!%20Vi%20o%20curso%20e%20quero%20saber%20sobre%20a%20cria%C3%A7%C3%A3o%20do%20meu%20site."
+          target="_blank"
+          rel="noopener"
+        >
+          Falar no WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
-<section class="card">
-  <h2>❓ Perguntas frequentes</h2>
 
-  <details class="faq">
-    <summary>Preciso ter experiência?</summary>
-    <p>Não. É para iniciantes.</p>
-  </details>
+<section class="section" id="servico">
 
-  <details class="faq">
-    <summary>Posso fazer pelo celular?</summary>
-    <p>Sim, todo o processo funciona pelo celular.</p>
-  </details>
+  <div class="container">
 
-  <details class="faq">
-    <summary>Como recebo acesso?</summary>
-    <p>Você recebe as instruções pelo WhatsApp.</p>
-  </details>
+    <div class="section-title">
+
+      <h2>
+        Seu site pronto por mim
+      </h2>
+
+      <p>
+        Você explica o que precisa e eu preparo
+        a página para você.
+      </p>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-top">
+
+        <div>
+
+          <h2>
+            Criação de Site
+          </h2>
+
+          <p style="color:var(--muted);margin:8px 0 0">
+            Uma página feita de acordo com seu objetivo.
+          </p>
+
+        </div>
+
+
+        <div class="price">
+
+          <small>
+            VALOR DO SERVIÇO
+          </small>
+
+          <strong>
+            Consulte
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="list">
+
+        <div>
+          Layout moderno e responsivo
+        </div>
+
+        <div>
+          Compatível com celular
+        </div>
+
+        <div>
+          Botões e links configurados
+        </div>
+
+        <div>
+          Seções organizadas
+        </div>
+
+        <div>
+          Personalização do conteúdo
+        </div>
+
+        <div>
+          Publicação do site
+        </div>
+
+      </div>
+
+
+      <a
+        class="btn primary"
+        style="width:100%"
+        href="https://wa.me/5548988473049?text=Quero%20comprar%20o%20servi%C3%A7o%20de%20cria%C3%A7%C3%A3o%20de%20site.%20Quero%20saber%20como%20funciona%20e%20o%20valor."
+        target="_blank"
+        rel="noopener"
+      >
+        COMPRAR TRABALHO DE SITE
+      </a>
+
+
+      <div class="note">
+        Ao clicar, você será direcionado ao WhatsApp
+        para combinar os detalhes do projeto.
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
-<section class="card final">
-  <h2>🚀 Comece agora</h2>
-  <p>Dê o primeiro passo para realizar sua primeira venda.</p>
-  <a class="btn" href="https://wa.me/558391310667">💬 FALAR NO WHATSAPP</a>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Dúvidas frequentes
+      </h2>
+
+    </div>
+
+
+    <div class="faq">
+
+      <details>
+
+        <summary>
+          Preciso saber programação?
+        </summary>
+
+        <p>
+          Não. O curso foi pensado para quem está
+          começando e quer aprender passo a passo.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Posso criar um site pelo celular?
+        </summary>
+
+        <p>
+          Você pode acompanhar e editar várias partes
+          pelo celular, mas algumas etapas ficam mais
+          fáceis em um computador.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          E se eu tentar e não conseguir?
+        </summary>
+
+        <p>
+          Você pode entrar em contato pelo WhatsApp
+          e solicitar o serviço de criação de site.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          O site pode ser personalizado?
+        </summary>
+
+        <p>
+          Sim. O serviço pode ser adaptado ao objetivo
+          do seu projeto, com textos, imagens, cores,
+          botões e seções.
+        </p>
+
+      </details>
+
+    </div>
+
+  </div>
+
 </section>
 
-<div class="small">Acesso e instruções enviados pelo WhatsApp.</div>
 </main>
+
+
+<footer>
+
+  <div class="container">
+    © 2026 PDXHZ • Curso de criação de sites
+  </div>
+
+</footer>
+
 </body>
-</html>
+        </html>
