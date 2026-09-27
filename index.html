@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,13 +11,13 @@
 <meta name="description" content="Guia prático para buscar sua primeira venda no aplicativo Kiwify.">
 
 <style>
+
 :root{
   --bg:#050b08;
   --bg2:#09150f;
   --card:#0d1b14;
   --card2:#102219;
   --green:#48e58b;
-  --green2:#21c76b;
   --gold:#ffd76a;
   --white:#f5fff9;
   --muted:#a8b9b0;
@@ -53,15 +54,13 @@ a{
   margin:auto;
 }
 
-/* =========================
-   CABEÇALHO
-========================= */
+/* CABEÇALHO */
 
 header{
   position:sticky;
   top:0;
   z-index:50;
-  background:rgba(5,11,8,.90);
+  background:rgba(5,11,8,.92);
   backdrop-filter:blur(15px);
   border-bottom:1px solid var(--line);
 }
@@ -102,9 +101,7 @@ header{
   background:rgba(255,255,255,.06);
 }
 
-/* =========================
-   BOTÕES
-========================= */
+/* BOTÕES */
 
 .actions{
   display:flex;
@@ -127,6 +124,7 @@ header{
   font-weight:950;
   transition:.2s ease;
   cursor:pointer;
+  text-align:center;
 }
 
 .btn:hover{
@@ -149,12 +147,10 @@ header{
   background:rgba(255,255,255,.04);
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
-  padding:82px 0 60px;
+  padding:72px 0 48px;
   text-align:center;
 }
 
@@ -190,18 +186,16 @@ h1 span{
   font-size:18px;
 }
 
-/* =========================
-   SEÇÕES
-========================= */
+/* SEÇÕES */
 
 .section{
-  padding:65px 0;
+  padding:48px 0;
 }
 
 .section-title{
   text-align:center;
   max-width:760px;
-  margin:0 auto 35px;
+  margin:0 auto 30px;
 }
 
 .section-title h2{
@@ -215,9 +209,7 @@ h1 span{
   color:var(--muted);
 }
 
-/* =========================
-   OFERTA
-========================= */
+/* OFERTA */
 
 .offer{
   max-width:920px;
@@ -285,9 +277,45 @@ h1 span{
   margin-right:9px;
 }
 
-/* =========================
-   CARDS
-========================= */
+/* DESTAQUE DO CURSO */
+
+.course-box{
+  max-width:920px;
+  margin:auto;
+  padding:38px 30px;
+  border-radius:27px;
+  text-align:center;
+
+  border:2px solid rgba(72,229,139,.35);
+
+  background:
+    radial-gradient(circle at 50% 0%,rgba(72,229,139,.16),transparent 40%),
+    linear-gradient(135deg,#10251a,#09130e);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.35),
+    0 0 45px rgba(72,229,139,.07);
+}
+
+.course-box h2{
+  max-width:780px;
+  margin:14px auto;
+  font-size:clamp(30px,5vw,48px);
+  line-height:1.05;
+}
+
+.course-box p{
+  max-width:720px;
+  margin:auto;
+  color:var(--muted);
+  font-size:16px;
+}
+
+.course-box .btn{
+  min-width:290px;
+}
+
+/* CARDS */
 
 .grid{
   display:grid;
@@ -326,9 +354,7 @@ h1 span{
   font-size:14px;
 }
 
-/* =========================
-   PASSOS
-========================= */
+/* PASSOS */
 
 .steps{
   display:grid;
@@ -367,37 +393,7 @@ h1 span{
   color:var(--muted);
 }
 
-/* =========================
-   CURSO DE SITES
-========================= */
-
-.course-box{
-  padding:42px 30px;
-  border-radius:27px;
-  text-align:center;
-  border:1px solid rgba(72,229,139,.25);
-  background:
-    radial-gradient(circle at 0% 100%,rgba(72,229,139,.12),transparent 34%),
-    linear-gradient(135deg,#10251a,#09130e);
-  box-shadow:var(--shadow);
-}
-
-.course-box h2{
-  max-width:780px;
-  margin:12px auto;
-  font-size:clamp(30px,5vw,48px);
-  line-height:1.05;
-}
-
-.course-box p{
-  max-width:720px;
-  margin:auto;
-  color:var(--muted);
-}
-
-/* =========================
-   SERVIÇO
-========================= */
+/* SERVIÇO */
 
 .service{
   max-width:900px;
@@ -437,9 +433,7 @@ h1 span{
   margin-right:9px;
 }
 
-/* =========================
-   FAQ
-========================= */
+/* FAQ */
 
 .faq{
   max-width:850px;
@@ -477,13 +471,11 @@ details p{
   color:var(--muted);
 }
 
-/* =========================
-   FINAL
-========================= */
+/* FINAL */
 
 .final{
   text-align:center;
-  padding:75px 0;
+  padding:65px 0 75px;
 }
 
 .final h2{
@@ -498,9 +490,7 @@ details p{
   color:var(--muted);
 }
 
-/* =========================
-   RODAPÉ
-========================= */
+/* RODAPÉ */
 
 footer{
   padding:35px 0 45px;
@@ -510,14 +500,12 @@ footer{
   font-size:13px;
 }
 
-/* =========================
-   CELULAR
-========================= */
+/* CELULAR */
 
 @media(max-width:760px){
 
   .hero{
-    padding:60px 0 50px;
+    padding:55px 0 40px;
   }
 
   .nav-links a{
@@ -549,6 +537,11 @@ footer{
     padding:32px 20px;
   }
 
+  .course-box .btn{
+    width:100%;
+    min-width:0;
+  }
+
   .service{
     padding:25px 20px;
   }
@@ -556,13 +549,18 @@ footer{
   h1{
     letter-spacing:-2px;
   }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
+
 <header>
+
   <div class="container nav">
 
     <a class="logo" href="index.html">
@@ -570,16 +568,32 @@ footer{
     </a>
 
     <nav class="nav-links">
-      <a href="#oferta">Oferta</a>
-      <a href="#conteudo">Conteúdo</a>
-      <a href="#curso">Curso de Sites</a>
-      <a href="#faq">Dúvidas</a>
+
+      <a href="#oferta">
+        Oferta
+      </a>
+
+      <a href="#curso">
+        Curso de Sites
+      </a>
+
+      <a href="#conteudo">
+        Conteúdo
+      </a>
+
+      <a href="#faq">
+        Dúvidas
+      </a>
+
     </nav>
 
   </div>
+
 </header>
 
+
 <main>
+
 
 <!-- HERO -->
 
@@ -592,24 +606,38 @@ footer{
     </div>
 
     <h1>
+
       Aprenda o caminho para buscar sua
-      <span>primeira venda na Kiwify</span>
+
+      <span>
+        primeira venda na Kiwify
+      </span>
+
     </h1>
 
     <p>
-      Um material direto para quem está começando e quer entender
-      como organizar uma oferta, divulgar seu produto e dar os
-      primeiros passos no mercado digital.
+
+      Um material direto para quem está começando
+      e quer entender como organizar uma oferta,
+      divulgar seu produto e dar os primeiros passos
+      no mercado digital.
+
     </p>
 
     <div class="actions">
 
-      <a class="btn gold" href="#oferta">
+      <a
+        class="btn gold"
+        href="#oferta"
+      >
         🛒 QUERO O GUIA • R$10
       </a>
 
-      <a class="btn secondary" href="#conteudo">
-        VER O QUE RECEBO ↓
+      <a
+        class="btn secondary"
+        href="#curso"
+      >
+        💻 VER CURSO DE SITES
       </a>
 
     </div>
@@ -619,9 +647,13 @@ footer{
 </section>
 
 
+
 <!-- OFERTA -->
 
-<section class="section" id="oferta">
+<section
+  class="section"
+  id="oferta"
+>
 
   <div class="container">
 
@@ -640,19 +672,29 @@ footer{
           </h2>
 
           <p class="offer-sub">
-            Guia prático para organizar seus primeiros passos
-            e entender o processo de venda de um produto digital.
+
+            Guia prático para organizar seus
+            primeiros passos e entender o processo
+            de venda de um produto digital.
+
           </p>
 
         </div>
 
+
         <div class="price">
 
-          <small>ACESSO</small>
+          <small>
+            ACESSO
+          </small>
 
-          <strong>R$10</strong>
+          <strong>
+            R$10
+          </strong>
 
-          <small>pagamento único</small>
+          <small>
+            pagamento único
+          </small>
 
         </div>
 
@@ -688,8 +730,6 @@ footer{
       </div>
 
 
-      <!-- WHATSAPP NOVO NÚMERO -->
-
       <a
         class="btn gold"
         style="width:100%"
@@ -697,7 +737,9 @@ footer{
         target="_blank"
         rel="noopener"
       >
+
         🛒 QUERO COMPRAR POR R$10
+
       </a>
 
     </div>
@@ -707,9 +749,64 @@ footer{
 </section>
 
 
+
+<!-- CURSO AGORA FICA AQUI EM CIMA -->
+
+<section
+  class="section"
+  id="curso"
+>
+
+  <div class="container">
+
+    <div class="course-box">
+
+      <div class="badge">
+        🚀 NOVO CONTEÚDO
+      </div>
+
+      <h2>
+        Quer aprender a criar seu próprio site?
+      </h2>
+
+      <p>
+
+        Também preparei um curso completo de criação
+        de sites, ensinando estrutura, HTML, CSS,
+        design, celular, botões, WhatsApp,
+        publicação e como transformar essa
+        habilidade em um serviço.
+
+      </p>
+
+
+      <div class="actions">
+
+        <a
+          class="btn primary"
+          href="curso.html"
+        >
+
+          💻 ACESSAR CURSO DE CRIAÇÃO DE SITES →
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
 <!-- CONTEÚDO -->
 
-<section class="section" id="conteudo">
+<section
+  class="section"
+  id="conteudo"
+>
 
   <div class="container">
 
@@ -728,6 +825,7 @@ footer{
 
     <div class="grid">
 
+
       <article class="card">
 
         <div class="icon">
@@ -739,8 +837,8 @@ footer{
         </h3>
 
         <p>
-          Entenda como apresentar seu produto de forma clara
-          e organizar uma oferta.
+          Entenda como apresentar seu produto
+          de forma clara e organizar uma oferta.
         </p>
 
       </article>
@@ -757,8 +855,8 @@ footer{
         </h3>
 
         <p>
-          Veja ideias para apresentar seu produto nos canais
-          digitais e começar a atrair interessados.
+          Veja ideias para apresentar seu produto
+          nos canais digitais.
         </p>
 
       </article>
@@ -775,7 +873,8 @@ footer{
         </h3>
 
         <p>
-          Aprenda a organizar mensagens e chamadas para ação.
+          Aprenda a organizar mensagens
+          e chamadas para ação.
         </p>
 
       </article>
@@ -792,7 +891,8 @@ footer{
         </h3>
 
         <p>
-          Entenda como juntar produto, oferta, página e divulgação.
+          Entenda como juntar produto,
+          oferta, página e divulgação.
         </p>
 
       </article>
@@ -809,8 +909,8 @@ footer{
         </h3>
 
         <p>
-          Use uma lista prática para conferir o que precisa
-          estar preparado.
+          Use uma lista prática para conferir
+          o que precisa estar preparado.
         </p>
 
       </article>
@@ -827,16 +927,19 @@ footer{
         </h3>
 
         <p>
-          Tenha uma visão mais clara de como começar.
+          Tenha uma visão mais clara
+          de como começar.
         </p>
 
       </article>
+
 
     </div>
 
   </div>
 
 </section>
+
 
 
 <!-- PASSO A PASSO -->
@@ -874,7 +977,7 @@ footer{
           </h3>
 
           <p>
-            Defina o produto digital e deixe claro
+            Defina seu produto digital e deixe claro
             qual problema ou objetivo ele atende.
           </p>
 
@@ -896,8 +999,8 @@ footer{
           </h3>
 
           <p>
-            Apresente o produto, benefícios e
-            como a pessoa pode adquirir.
+            Apresente o produto, benefícios
+            e como a pessoa pode adquirir.
           </p>
 
         </div>
@@ -941,7 +1044,7 @@ footer{
 
           <p>
             Responda dúvidas e deixe o próximo
-            passo claro para quem demonstrar interesse.
+            passo claro.
           </p>
 
         </div>
@@ -978,46 +1081,6 @@ footer{
 </section>
 
 
-<!-- CURSO DE SITES -->
-
-<section class="section" id="curso">
-
-  <div class="container">
-
-    <div class="course-box">
-
-      <div class="badge">
-        🚀 NOVO CONTEÚDO
-      </div>
-
-      <h2>
-        Quer aprender a criar seu próprio site?
-      </h2>
-
-      <p>
-        Também preparei um curso completo de criação de sites,
-        ensinando estrutura, HTML, CSS, design, celular,
-        botões, WhatsApp, publicação e como transformar
-        essa habilidade em um serviço.
-      </p>
-
-      <div class="actions">
-
-        <a
-          class="btn primary"
-          href="curso.html"
-        >
-          💻 ACESSAR CURSO DE CRIAÇÃO DE SITES →
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
 
 <!-- SERVIÇO -->
 
@@ -1028,4 +1091,239 @@ footer{
     <div class="section-title">
 
       <h2>
-       
+        Também faço sites
+      </h2>
+
+      <p>
+        Se preferir, posso criar um site para você.
+      </p>
+
+    </div>
+
+
+    <div class="service">
+
+      <h2>
+        💻 Site feito para você
+      </h2>
+
+      <p>
+        Uma página personalizada para seu negócio,
+        produto, serviço ou projeto.
+      </p>
+
+
+      <div class="service-list">
+
+        <div>
+          Layout personalizado
+        </div>
+
+        <div>
+          Visual profissional
+        </div>
+
+        <div>
+          Responsivo para celular
+        </div>
+
+        <div>
+          Botões configurados
+        </div>
+
+        <div>
+          WhatsApp e links
+        </div>
+
+        <div>
+          Seções organizadas
+        </div>
+
+        <div>
+          Textos e imagens
+        </div>
+
+        <div>
+          Publicação do projeto
+        </div>
+
+      </div>
+
+
+      <a
+        class="btn primary"
+        style="width:100%"
+        href="https://wa.me/558391310667?text=Ol%C3%A1!%20Vi%20o%20site%20da%20PDXHZ%20e%20quero%20saber%20sobre%20a%20cria%C3%A7%C3%A3o%20de%20um%20site."
+        target="_blank"
+        rel="noopener"
+      >
+
+        💬 QUERO UM SITE
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- FAQ -->
+
+<section
+  class="section"
+  id="faq"
+>
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Dúvidas frequentes
+      </h2>
+
+    </div>
+
+
+    <div class="faq">
+
+
+      <details>
+
+        <summary>
+          O que eu recebo?
+        </summary>
+
+        <p>
+          Você recebe o material digital com as
+          orientações e conteúdos apresentados na oferta.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          É para quem está começando?
+        </summary>
+
+        <p>
+          Sim. A proposta é apresentar os primeiros
+          passos em uma linguagem simples e organizada.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Preciso aparecer para divulgar?
+        </summary>
+
+        <p>
+          Não necessariamente. Existem diferentes
+          formas de apresentar um produto e divulgar
+          uma oferta.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Como entro em contato?
+        </summary>
+
+        <p>
+          Você pode clicar nos botões de WhatsApp
+          espalhados pela página.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Onde está o curso de criação de sites?
+        </summary>
+
+        <p>
+          Clique no botão "Acessar Curso de Criação
+          de Sites". Ele abrirá o arquivo curso.html.
+        </p>
+
+      </details>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+  <div class="container">
+
+    <h2>
+      Comece seus próximos passos hoje.
+    </h2>
+
+    <p>
+      Conheça o material e aprenda também
+      a criar sites com o curso da PDXHZ.
+    </p>
+
+
+    <div class="actions">
+
+      <a
+        class="btn gold"
+        href="#oferta"
+      >
+        🛒 QUERO O GUIA • R$10
+      </a>
+
+
+      <a
+        class="btn secondary"
+        href="curso.html"
+      >
+        💻 CURSO DE SITES
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+  <div class="container">
+
+    © 2026 PDXHZ • Primeira Venda na Kiwify
+
+  </div>
+
+</footer>
+
+
+</body>
+  </html>
