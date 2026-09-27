@@ -1,11 +1,13 @@
-   <!doctype html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07110d">
-<meta name="description" content="Curso prático para aprender a criar seu próprio site do zero.">
-<title>Como Criar Seu Site | PDXHZ</title>
+
+<title>Primeira Venda na Kiwify | PDXHZ</title>
+
+<meta name="description" content="Guia prático para buscar sua primeira venda no aplicativo Kiwify.">
 
 <style>
 :root{
@@ -19,21 +21,25 @@
   --white:#f5fff9;
   --muted:#a8b9b0;
   --line:rgba(255,255,255,.09);
-  --shadow:0 22px 70px rgba(0,0,0,.35);
+  --shadow:0 25px 70px rgba(0,0,0,.35);
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
   background:
-    radial-gradient(circle at 15% 0%,rgba(72,229,139,.13),transparent 28%),
-    radial-gradient(circle at 90% 15%,rgba(255,215,106,.08),transparent 25%),
+    radial-gradient(circle at 15% 0%,rgba(72,229,139,.14),transparent 30%),
+    radial-gradient(circle at 90% 10%,rgba(255,215,106,.08),transparent 25%),
     var(--bg);
   color:var(--white);
-  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
   line-height:1.6;
 }
 
@@ -43,16 +49,20 @@ a{
 }
 
 .container{
-  width:min(1120px,92%);
+  width:min(1100px,92%);
   margin:auto;
 }
+
+/* =========================
+   CABEÇALHO
+========================= */
 
 header{
   position:sticky;
   top:0;
-  z-index:20;
-  background:rgba(5,11,8,.78);
-  backdrop-filter:blur(16px);
+  z-index:50;
+  background:rgba(5,11,8,.90);
+  backdrop-filter:blur(15px);
   border-bottom:1px solid var(--line);
 }
 
@@ -61,11 +71,12 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:18px;
+  gap:15px;
 }
 
 .logo{
-  font-weight:900;
+  font-size:21px;
+  font-weight:1000;
   letter-spacing:.08em;
 }
 
@@ -73,43 +84,99 @@ header{
   color:var(--green);
 }
 
-.nav a{
+.nav-links{
+  display:flex;
+  gap:5px;
+}
+
+.nav-links a{
   color:var(--muted);
-  font-size:14px;
-  font-weight:700;
   padding:9px 12px;
   border-radius:10px;
+  font-size:13px;
+  font-weight:800;
 }
 
-.nav a:hover{
+.nav-links a:hover{
   color:var(--white);
-  background:rgba(255,255,255,.05);
+  background:rgba(255,255,255,.06);
 }
+
+/* =========================
+   BOTÕES
+========================= */
+
+.actions{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:28px;
+}
+
+.btn{
+  min-height:52px;
+  padding:0 21px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  border-radius:13px;
+  border:1px solid var(--line);
+  font-weight:950;
+  transition:.2s ease;
+  cursor:pointer;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.primary{
+  background:var(--green);
+  color:#031008;
+  border-color:var(--green);
+}
+
+.gold{
+  background:var(--gold);
+  color:#171105;
+  border-color:var(--gold);
+}
+
+.secondary{
+  background:rgba(255,255,255,.04);
+}
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-  padding:78px 0 55px;
+  padding:82px 0 60px;
   text-align:center;
 }
 
 .badge{
   display:inline-flex;
   align-items:center;
-  gap:8px;
-  padding:8px 13px;
-  border:1px solid rgba(72,229,139,.28);
+  justify-content:center;
+  padding:9px 15px;
+  border:1px solid rgba(72,229,139,.30);
   background:rgba(72,229,139,.08);
   border-radius:999px;
   color:var(--green);
-  font-size:13px;
-  font-weight:800;
+  font-size:12px;
+  font-weight:900;
 }
 
 h1{
-  font-size:clamp(38px,7vw,72px);
-  line-height:1.02;
-  margin:22px auto 18px;
-  max-width:900px;
-  letter-spacing:-.045em;
+  max-width:920px;
+  margin:23px auto 18px;
+  font-size:clamp(40px,7vw,74px);
+  line-height:1;
+  letter-spacing:-3px;
 }
 
 h1 span{
@@ -117,67 +184,110 @@ h1 span{
 }
 
 .hero p{
-  max-width:720px;
-  margin:0 auto;
+  max-width:760px;
+  margin:auto;
   color:var(--muted);
   font-size:18px;
 }
 
-.actions{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:28px;
-}
-
-.btn{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  gap:9px;
-  min-height:50px;
-  padding:0 20px;
-  border-radius:13px;
-  font-weight:900;
-  border:1px solid var(--line);
-  transition:.2s;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-}
-
-.btn.primary{
-  background:var(--green);
-  color:#031008;
-  border-color:var(--green);
-}
-
-.btn.secondary{
-  background:rgba(255,255,255,.04);
-}
+/* =========================
+   SEÇÕES
+========================= */
 
 .section{
-  padding:62px 0;
+  padding:65px 0;
 }
 
 .section-title{
   text-align:center;
-  max-width:720px;
-  margin:0 auto 34px;
+  max-width:760px;
+  margin:0 auto 35px;
 }
 
 .section-title h2{
-  font-size:clamp(28px,4vw,42px);
-  margin:0 0 9px;
-  letter-spacing:-.03em;
+  margin:0 0 10px;
+  font-size:clamp(30px,4vw,45px);
+  line-height:1.08;
 }
 
 .section-title p{
   margin:0;
   color:var(--muted);
 }
+
+/* =========================
+   OFERTA
+========================= */
+
+.offer{
+  max-width:920px;
+  margin:auto;
+  padding:34px;
+  border-radius:27px;
+  border:1px solid rgba(255,215,106,.28);
+  background:
+    radial-gradient(circle at 100% 0%,rgba(255,215,106,.13),transparent 35%),
+    linear-gradient(145deg,#151d13,#0b1710);
+  box-shadow:var(--shadow);
+}
+
+.offer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:25px;
+}
+
+.offer h2{
+  margin:12px 0 7px;
+  font-size:38px;
+}
+
+.offer-sub{
+  margin:0;
+  color:var(--muted);
+}
+
+.price{
+  text-align:right;
+  white-space:nowrap;
+}
+
+.price small{
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+}
+
+.price strong{
+  display:block;
+  color:var(--gold);
+  font-size:42px;
+  line-height:1.1;
+}
+
+.checks{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin:28px 0;
+}
+
+.checks div{
+  color:#dce9e1;
+  font-size:14px;
+}
+
+.checks div::before{
+  content:"✓";
+  color:var(--green);
+  font-weight:1000;
+  margin-right:9px;
+}
+
+/* =========================
+   CARDS
+========================= */
 
 .grid{
   display:grid;
@@ -186,23 +296,23 @@ h1 span{
 }
 
 .card{
-  background:linear-gradient(180deg,var(--card2),var(--card));
+  padding:24px;
   border:1px solid var(--line);
   border-radius:20px;
-  padding:24px;
+  background:linear-gradient(150deg,var(--card2),var(--card));
   box-shadow:var(--shadow);
 }
 
 .icon{
-  width:44px;
-  height:44px;
-  border-radius:13px;
+  width:46px;
+  height:46px;
   display:grid;
   place-items:center;
-  background:rgba(72,229,139,.1);
+  border-radius:13px;
+  background:rgba(72,229,139,.10);
   color:var(--green);
   font-size:21px;
-  margin-bottom:15px;
+  margin-bottom:16px;
 }
 
 .card h3{
@@ -213,13 +323,17 @@ h1 span{
 .card p{
   margin:0;
   color:var(--muted);
-  font-size:15px;
+  font-size:14px;
 }
+
+/* =========================
+   PASSOS
+========================= */
 
 .steps{
   display:grid;
   gap:14px;
-  max-width:850px;
+  max-width:880px;
   margin:auto;
 }
 
@@ -227,7 +341,6 @@ h1 span{
   display:grid;
   grid-template-columns:48px 1fr;
   gap:16px;
-  align-items:start;
   padding:20px;
   border:1px solid var(--line);
   border-radius:17px;
@@ -237,9 +350,9 @@ h1 span{
 .num{
   width:42px;
   height:42px;
-  border-radius:12px;
   display:grid;
   place-items:center;
+  border-radius:12px;
   background:var(--green);
   color:#031008;
   font-weight:1000;
@@ -254,99 +367,79 @@ h1 span{
   color:var(--muted);
 }
 
-.help{
-  margin-top:35px;
-  padding:38px;
-  border-radius:25px;
-  border:1px solid rgba(255,215,106,.22);
-  background:
-    radial-gradient(circle at 100% 0%,rgba(255,215,106,.11),transparent 35%),
-    linear-gradient(135deg,#151d13,#0b1710);
+/* =========================
+   CURSO DE SITES
+========================= */
+
+.course-box{
+  padding:42px 30px;
+  border-radius:27px;
   text-align:center;
+  border:1px solid rgba(72,229,139,.25);
+  background:
+    radial-gradient(circle at 0% 100%,rgba(72,229,139,.12),transparent 34%),
+    linear-gradient(135deg,#10251a,#09130e);
+  box-shadow:var(--shadow);
 }
 
-.help .mini{
-  color:var(--gold);
-  font-weight:900;
-  font-size:13px;
-  text-transform:uppercase;
-  letter-spacing:.1em;
+.course-box h2{
+  max-width:780px;
+  margin:12px auto;
+  font-size:clamp(30px,5vw,48px);
+  line-height:1.05;
 }
 
-.help h2{
-  font-size:clamp(28px,5vw,46px);
-  margin:9px 0 10px;
-  line-height:1.08;
-}
-
-.help p{
+.course-box p{
+  max-width:720px;
+  margin:auto;
   color:var(--muted);
-  max-width:650px;
-  margin:0 auto;
 }
+
+/* =========================
+   SERVIÇO
+========================= */
 
 .service{
   max-width:900px;
   margin:auto;
-  border:1px solid rgba(72,229,139,.24);
+  padding:34px;
+  border:1px solid rgba(72,229,139,.25);
   border-radius:26px;
-  padding:30px;
   background:linear-gradient(145deg,#10251a,#0a1510);
-  box-shadow:0 30px 90px rgba(0,0,0,.4);
-}
-
-.service-top{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  align-items:start;
+  box-shadow:var(--shadow);
 }
 
 .service h2{
-  margin:0;
+  margin:0 0 8px;
   font-size:32px;
 }
 
-.price{
-  white-space:nowrap;
-  text-align:right;
-}
-
-.price small{
-  display:block;
+.service p{
   color:var(--muted);
-  font-size:12px;
 }
 
-.price strong{
-  font-size:27px;
-  color:var(--green);
-}
-
-.list{
+.service-list{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:10px;
   margin:25px 0;
 }
 
-.list div{
+.service-list div{
   color:#d8e5dd;
   font-size:14px;
 }
 
-.list div::before{
+.service-list div::before{
   content:"✓";
   color:var(--green);
-  font-weight:900;
+  font-weight:1000;
   margin-right:9px;
 }
 
-.note{
-  font-size:12px;
-  color:#7f9288;
-  margin-top:12px;
-}
+/* =========================
+   FAQ
+========================= */
 
 .faq{
   max-width:850px;
@@ -354,73 +447,114 @@ h1 span{
 }
 
 details{
+  padding:19px 0;
   border-bottom:1px solid var(--line);
-  padding:18px 0;
 }
 
 summary{
   cursor:pointer;
-  font-weight:800;
   list-style:none;
+  font-weight:850;
 }
 
 summary::-webkit-details-marker{
   display:none;
 }
 
-summary:after{
+summary::after{
   content:"+";
   float:right;
   color:var(--green);
-  font-size:22px;
+  font-size:21px;
 }
 
-details[open] summary:after{
+details[open] summary::after{
   content:"−";
 }
 
 details p{
-  color:var(--muted);
   margin:12px 0 0;
+  color:var(--muted);
 }
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+  text-align:center;
+  padding:75px 0;
+}
+
+.final h2{
+  font-size:clamp(30px,5vw,50px);
+  line-height:1.05;
+  margin:0 0 12px;
+}
+
+.final p{
+  max-width:650px;
+  margin:auto;
+  color:var(--muted);
+}
+
+/* =========================
+   RODAPÉ
+========================= */
 
 footer{
   padding:35px 0 45px;
-  text-align:center;
-  color:#74857c;
   border-top:1px solid var(--line);
+  text-align:center;
+  color:#718279;
   font-size:13px;
 }
 
+/* =========================
+   CELULAR
+========================= */
+
 @media(max-width:760px){
 
-  .nav a:not(.home){
-    display:none;
+  .hero{
+    padding:60px 0 50px;
   }
 
-  .hero{
-    padding-top:58px;
+  .nav-links a{
+    display:none;
   }
 
   .grid{
     grid-template-columns:1fr;
   }
 
-  .service-top{
+  .offer-top{
     display:block;
   }
 
   .price{
+    margin-top:18px;
     text-align:left;
-    margin-top:14px;
   }
 
-  .list{
+  .checks{
     grid-template-columns:1fr;
   }
 
-  .help{
-    padding:28px 20px;
+  .service-list{
+    grid-template-columns:1fr;
+  }
+
+  .course-box{
+    padding:32px 20px;
+  }
+
+  .service{
+    padding:25px 20px;
+  }
+
+  h1{
+    letter-spacing:-2px;
   }
 }
 </style>
@@ -435,10 +569,11 @@ footer{
       PDX<span>HZ</span>
     </a>
 
-    <nav>
-      <a class="home" href="index.html">Página inicial</a>
-      <a href="#curso">Curso</a>
-      <a href="#ajuda">Precisa de ajuda?</a>
+    <nav class="nav-links">
+      <a href="#oferta">Oferta</a>
+      <a href="#conteudo">Conteúdo</a>
+      <a href="#curso">Curso de Sites</a>
+      <a href="#faq">Dúvidas</a>
     </nav>
 
   </div>
@@ -446,32 +581,35 @@ footer{
 
 <main>
 
+<!-- HERO -->
+
 <section class="hero">
 
   <div class="container">
 
     <div class="badge">
-      🚀 CURSO PRÁTICO • DO ZERO AO SITE NO AR
+      🔥 GUIA PRÁTICO • PRIMEIRA VENDA NO APLICATIVO KIWIFY
     </div>
 
     <h1>
-      Aprenda a criar seu
-      <span>próprio site</span>
+      Aprenda o caminho para buscar sua
+      <span>primeira venda na Kiwify</span>
     </h1>
 
     <p>
-      Um passo a passo simples para você entender como criar,
-      editar e publicar um site mesmo começando do zero.
+      Um material direto para quem está começando e quer entender
+      como organizar uma oferta, divulgar seu produto e dar os
+      primeiros passos no mercado digital.
     </p>
 
     <div class="actions">
 
-      <a class="btn primary" href="#curso">
-        Começar o curso ↓
+      <a class="btn gold" href="#oferta">
+        🛒 QUERO O GUIA • R$10
       </a>
 
-      <a class="btn secondary" href="#ajuda">
-        Quero ajuda com meu site
+      <a class="btn secondary" href="#conteudo">
+        VER O QUE RECEBO ↓
       </a>
 
     </div>
@@ -481,19 +619,108 @@ footer{
 </section>
 
 
-<section class="section" id="curso">
+<!-- OFERTA -->
+
+<section class="section" id="oferta">
+
+  <div class="container">
+
+    <div class="offer">
+
+      <div class="offer-top">
+
+        <div>
+
+          <div class="badge">
+            OFERTA DIGITAL
+          </div>
+
+          <h2>
+            Primeira Venda na Kiwify
+          </h2>
+
+          <p class="offer-sub">
+            Guia prático para organizar seus primeiros passos
+            e entender o processo de venda de um produto digital.
+          </p>
+
+        </div>
+
+        <div class="price">
+
+          <small>ACESSO</small>
+
+          <strong>R$10</strong>
+
+          <small>pagamento único</small>
+
+        </div>
+
+      </div>
+
+
+      <div class="checks">
+
+        <div>
+          Material para iniciantes
+        </div>
+
+        <div>
+          Passo a passo simples
+        </div>
+
+        <div>
+          Organização da oferta
+        </div>
+
+        <div>
+          Ideias de divulgação
+        </div>
+
+        <div>
+          Checklist para começar
+        </div>
+
+        <div>
+          Conteúdo em linguagem fácil
+        </div>
+
+      </div>
+
+
+      <!-- WHATSAPP NOVO NÚMERO -->
+
+      <a
+        class="btn gold"
+        style="width:100%"
+        href="https://wa.me/558391310667?text=Ol%C3%A1!%20Quero%20comprar%20o%20guia%20Primeira%20Venda%20na%20Kiwify%20por%20R%2410."
+        target="_blank"
+        rel="noopener"
+      >
+        🛒 QUERO COMPRAR POR R$10
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTEÚDO -->
+
+<section class="section" id="conteudo">
 
   <div class="container">
 
     <div class="section-title">
 
       <h2>
-        O que você vai aprender
+        O que você vai encontrar
       </h2>
 
       <p>
-        O conteúdo foi organizado para você avançar
-        sem precisar entender programação complicada.
+        Conteúdo organizado para facilitar seus primeiros passos.
       </p>
 
     </div>
@@ -503,15 +730,17 @@ footer{
 
       <article class="card">
 
-        <div class="icon">🌐</div>
+        <div class="icon">
+          🎯
+        </div>
 
         <h3>
-          Estrutura de um site
+          Organização da oferta
         </h3>
 
         <p>
-          Entenda como uma página funciona e quais
-          partes formam um site.
+          Entenda como apresentar seu produto de forma clara
+          e organizar uma oferta.
         </p>
 
       </article>
@@ -519,15 +748,17 @@ footer{
 
       <article class="card">
 
-        <div class="icon">💻</div>
+        <div class="icon">
+          📱
+        </div>
 
         <h3>
-          HTML na prática
+          Divulgação
         </h3>
 
         <p>
-          Aprenda a criar títulos, textos, botões,
-          seções e outros elementos.
+          Veja ideias para apresentar seu produto nos canais
+          digitais e começar a atrair interessados.
         </p>
 
       </article>
@@ -535,15 +766,16 @@ footer{
 
       <article class="card">
 
-        <div class="icon">🎨</div>
+        <div class="icon">
+          💬
+        </div>
 
         <h3>
-          Visual profissional
+          Comunicação
         </h3>
 
         <p>
-          Aprenda a organizar cores, espaços,
-          cartões e elementos para deixar a página bonita.
+          Aprenda a organizar mensagens e chamadas para ação.
         </p>
 
       </article>
@@ -551,15 +783,16 @@ footer{
 
       <article class="card">
 
-        <div class="icon">📱</div>
+        <div class="icon">
+          🧩
+        </div>
 
         <h3>
-          Site para celular
+          Estrutura
         </h3>
 
         <p>
-          Entenda como adaptar sua página para
-          diferentes tamanhos de tela.
+          Entenda como juntar produto, oferta, página e divulgação.
         </p>
 
       </article>
@@ -567,15 +800,17 @@ footer{
 
       <article class="card">
 
-        <div class="icon">⚡</div>
+        <div class="icon">
+          📋
+        </div>
 
         <h3>
-          Botões e links
+          Checklist
         </h3>
 
         <p>
-          Aprenda a fazer botões funcionarem e
-          direcionarem o visitante para o lugar certo.
+          Use uma lista prática para conferir o que precisa
+          estar preparado.
         </p>
 
       </article>
@@ -583,15 +818,16 @@ footer{
 
       <article class="card">
 
-        <div class="icon">🚀</div>
+        <div class="icon">
+          🚀
+        </div>
 
         <h3>
-          Publicação
+          Primeiros passos
         </h3>
 
         <p>
-          Aprenda o processo para colocar seu site
-          online e compartilhar o endereço.
+          Tenha uma visão mais clara de como começar.
         </p>
 
       </article>
@@ -603,6 +839,8 @@ footer{
 </section>
 
 
+<!-- PASSO A PASSO -->
+
 <section class="section">
 
   <div class="container">
@@ -610,12 +848,11 @@ footer{
     <div class="section-title">
 
       <h2>
-        Passo a passo
+        Um caminho simples para começar
       </h2>
 
       <p>
-        Siga esta sequência para transformar
-        uma ideia em uma página publicada.
+        Organize seus primeiros passos.
       </p>
 
     </div>
@@ -623,19 +860,22 @@ footer{
 
     <div class="steps">
 
+
       <div class="step">
 
-        <div class="num">1</div>
+        <div class="num">
+          1
+        </div>
 
         <div>
 
           <h3>
-            Planeje o que o site precisa ter
+            Escolha o que você vai vender
           </h3>
 
           <p>
-            Defina objetivo, público, informações,
-            imagens e botões antes de começar.
+            Defina o produto digital e deixe claro
+            qual problema ou objetivo ele atende.
           </p>
 
         </div>
@@ -645,17 +885,19 @@ footer{
 
       <div class="step">
 
-        <div class="num">2</div>
+        <div class="num">
+          2
+        </div>
 
         <div>
 
           <h3>
-            Monte a estrutura
+            Organize sua oferta
           </h3>
 
           <p>
-            Crie a base da página e organize
-            cabeçalho, conteúdo, ofertas e contato.
+            Apresente o produto, benefícios e
+            como a pessoa pode adquirir.
           </p>
 
         </div>
@@ -665,17 +907,19 @@ footer{
 
       <div class="step">
 
-        <div class="num">3</div>
+        <div class="num">
+          3
+        </div>
 
         <div>
 
           <h3>
-            Personalize o visual
+            Prepare a divulgação
           </h3>
 
           <p>
-            Escolha cores, fontes, tamanhos e
-            espaçamentos que combinem com o projeto.
+            Escolha canais e crie conteúdos
+            para apresentar sua oferta.
           </p>
 
         </div>
@@ -685,17 +929,19 @@ footer{
 
       <div class="step">
 
-        <div class="num">4</div>
+        <div class="num">
+          4
+        </div>
 
         <div>
 
           <h3>
-            Teste no celular
+            Converse com interessados
           </h3>
 
           <p>
-            Confira textos, botões, links e
-            aparência antes de publicar.
+            Responda dúvidas e deixe o próximo
+            passo claro para quem demonstrar interesse.
           </p>
 
         </div>
@@ -705,22 +951,25 @@ footer{
 
       <div class="step">
 
-        <div class="num">5</div>
+        <div class="num">
+          5
+        </div>
 
         <div>
 
           <h3>
-            Publique e divulgue
+            Analise e melhore
           </h3>
 
           <p>
-            Coloque o projeto no ar e compartilhe
-            o endereço com seus clientes ou público.
+            Observe o que funcionou e continue
+            melhorando sua apresentação.
           </p>
 
         </div>
 
       </div>
+
 
     </div>
 
@@ -729,39 +978,36 @@ footer{
 </section>
 
 
-<section class="section" id="ajuda">
+<!-- CURSO DE SITES -->
+
+<section class="section" id="curso">
 
   <div class="container">
 
-    <div class="help">
+    <div class="course-box">
 
-      <div class="mini">
-        Não conseguiu criar sozinho?
+      <div class="badge">
+        🚀 NOVO CONTEÚDO
       </div>
 
       <h2>
-        Eu posso criar o seu site para você.
+        Quer aprender a criar seu próprio site?
       </h2>
 
       <p>
-        Se você acompanhou o curso, tentou fazer seu site
-        e mesmo assim não conseguiu, não precisa desistir.
-        Posso cuidar da criação do seu site para você.
+        Também preparei um curso completo de criação de sites,
+        ensinando estrutura, HTML, CSS, design, celular,
+        botões, WhatsApp, publicação e como transformar
+        essa habilidade em um serviço.
       </p>
 
       <div class="actions">
 
-        <a class="btn primary" href="#servico">
-          COMPRAR TRABALHO DE SITE →
-        </a>
-
         <a
-          class="btn secondary"
-          href="https://wa.me/5548988473049?text=Ol%C3%A1!%20Vi%20o%20curso%20e%20quero%20saber%20sobre%20a%20cria%C3%A7%C3%A3o%20do%20meu%20site."
-          target="_blank"
-          rel="noopener"
+          class="btn primary"
+          href="curso.html"
         >
-          Falar no WhatsApp
+          💻 ACESSAR CURSO DE CRIAÇÃO DE SITES →
         </a>
 
       </div>
@@ -773,107 +1019,7 @@ footer{
 </section>
 
 
-<section class="section" id="servico">
-
-  <div class="container">
-
-    <div class="section-title">
-
-      <h2>
-        Seu site pronto por mim
-      </h2>
-
-      <p>
-        Você explica o que precisa e eu preparo
-        a página para você.
-      </p>
-
-    </div>
-
-
-    <div class="service">
-
-      <div class="service-top">
-
-        <div>
-
-          <h2>
-            Criação de Site
-          </h2>
-
-          <p style="color:var(--muted);margin:8px 0 0">
-            Uma página feita de acordo com seu objetivo.
-          </p>
-
-        </div>
-
-
-        <div class="price">
-
-          <small>
-            VALOR DO SERVIÇO
-          </small>
-
-          <strong>
-            Consulte
-          </strong>
-
-        </div>
-
-      </div>
-
-
-      <div class="list">
-
-        <div>
-          Layout moderno e responsivo
-        </div>
-
-        <div>
-          Compatível com celular
-        </div>
-
-        <div>
-          Botões e links configurados
-        </div>
-
-        <div>
-          Seções organizadas
-        </div>
-
-        <div>
-          Personalização do conteúdo
-        </div>
-
-        <div>
-          Publicação do site
-        </div>
-
-      </div>
-
-
-      <a
-        class="btn primary"
-        style="width:100%"
-        href="https://wa.me/5548988473049?text=Quero%20comprar%20o%20servi%C3%A7o%20de%20cria%C3%A7%C3%A3o%20de%20site.%20Quero%20saber%20como%20funciona%20e%20o%20valor."
-        target="_blank"
-        rel="noopener"
-      >
-        COMPRAR TRABALHO DE SITE
-      </a>
-
-
-      <div class="note">
-        Ao clicar, você será direcionado ao WhatsApp
-        para combinar os detalhes do projeto.
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
+<!-- SERVIÇO -->
 
 <section class="section">
 
@@ -882,87 +1028,4 @@ footer{
     <div class="section-title">
 
       <h2>
-        Dúvidas frequentes
-      </h2>
-
-    </div>
-
-
-    <div class="faq">
-
-      <details>
-
-        <summary>
-          Preciso saber programação?
-        </summary>
-
-        <p>
-          Não. O curso foi pensado para quem está
-          começando e quer aprender passo a passo.
-        </p>
-
-      </details>
-
-
-      <details>
-
-        <summary>
-          Posso criar um site pelo celular?
-        </summary>
-
-        <p>
-          Você pode acompanhar e editar várias partes
-          pelo celular, mas algumas etapas ficam mais
-          fáceis em um computador.
-        </p>
-
-      </details>
-
-
-      <details>
-
-        <summary>
-          E se eu tentar e não conseguir?
-        </summary>
-
-        <p>
-          Você pode entrar em contato pelo WhatsApp
-          e solicitar o serviço de criação de site.
-        </p>
-
-      </details>
-
-
-      <details>
-
-        <summary>
-          O site pode ser personalizado?
-        </summary>
-
-        <p>
-          Sim. O serviço pode ser adaptado ao objetivo
-          do seu projeto, com textos, imagens, cores,
-          botões e seções.
-        </p>
-
-      </details>
-
-    </div>
-
-  </div>
-
-</section>
-
-</main>
-
-
-<footer>
-
-  <div class="container">
-    © 2026 PDXHZ • Curso de criação de sites
-  </div>
-
-</footer>
-
-</body>
-        </html>
+       
