@@ -1,0 +1,1623 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07110d">
+<meta name="description" content="Curso completo para aprender a criar, publicar, editar e trabalhar com sites.">
+<title>Curso Completo de Sites | PDXHZ</title>
+
+<style>
+:root{
+  --bg:#050b08;
+  --bg2:#09150f;
+  --card:#0d1b14;
+  --card2:#102219;
+  --green:#48e58b;
+  --green2:#21c76b;
+  --gold:#ffd76a;
+  --white:#f5fff9;
+  --muted:#a8b9b0;
+  --line:rgba(255,255,255,.09);
+  --shadow:0 22px 70px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 15% 0%,rgba(72,229,139,.13),transparent 28%),
+    radial-gradient(circle at 90% 15%,rgba(255,215,106,.08),transparent 25%),
+    var(--bg);
+  color:var(--white);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.6;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(5,11,8,.82);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.logo{
+  font-size:19px;
+  font-weight:1000;
+  letter-spacing:.08em;
+}
+
+.logo span{
+  color:var(--green);
+}
+
+.nav-links{
+  display:flex;
+  gap:4px;
+}
+
+.nav-links a{
+  color:var(--muted);
+  padding:9px 12px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:800;
+}
+
+.nav-links a:hover{
+  color:var(--white);
+  background:rgba(255,255,255,.06);
+}
+
+/* HERO */
+
+.hero{
+  padding:85px 0 65px;
+  text-align:center;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 15px;
+  border:1px solid rgba(72,229,139,.3);
+  background:rgba(72,229,139,.08);
+  border-radius:999px;
+  color:var(--green);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.04em;
+}
+
+h1{
+  max-width:950px;
+  margin:23px auto 18px;
+  font-size:clamp(40px,7vw,76px);
+  line-height:1;
+  letter-spacing:-.05em;
+}
+
+h1 span{
+  color:var(--green);
+}
+
+.hero p{
+  max-width:760px;
+  margin:auto;
+  color:var(--muted);
+  font-size:18px;
+}
+
+.actions{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:30px;
+}
+
+.btn{
+  min-height:51px;
+  padding:0 21px;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  border-radius:13px;
+  border:1px solid var(--line);
+  font-weight:950;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn.primary{
+  background:var(--green);
+  color:#031008;
+  border-color:var(--green);
+}
+
+.btn.secondary{
+  background:rgba(255,255,255,.04);
+}
+
+/* GERAL */
+
+.section{
+  padding:65px 0;
+}
+
+.section-title{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 35px;
+}
+
+.section-title h2{
+  margin:0 0 9px;
+  font-size:clamp(29px,4vw,44px);
+  line-height:1.08;
+  letter-spacing:-.035em;
+}
+
+.section-title p{
+  margin:0;
+  color:var(--muted);
+}
+
+/* BENEFÍCIOS */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.card{
+  padding:24px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:linear-gradient(150deg,var(--card2),var(--card));
+  box-shadow:var(--shadow);
+}
+
+.icon{
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  border-radius:13px;
+  background:rgba(72,229,139,.1);
+  color:var(--green);
+  font-size:21px;
+  margin-bottom:16px;
+}
+
+.card h3{
+  margin:0 0 8px;
+  font-size:19px;
+}
+
+.card p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* MÓDULOS */
+
+.modules{
+  display:grid;
+  gap:14px;
+  max-width:900px;
+  margin:auto;
+}
+
+.module{
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:rgba(255,255,255,.025);
+  overflow:hidden;
+}
+
+.module-head{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:20px;
+}
+
+.module-number{
+  min-width:43px;
+  width:43px;
+  height:43px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:var(--green);
+  color:#031008;
+  font-weight:1000;
+}
+
+.module h3{
+  margin:0;
+  font-size:18px;
+}
+
+.module p{
+  margin:3px 0 0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.module ul{
+  margin:0;
+  padding:0 25px 22px 78px;
+  color:#c8d7cf;
+}
+
+.module li{
+  margin:7px 0;
+}
+
+.module li::marker{
+  color:var(--green);
+}
+
+/* JORNADA */
+
+.timeline{
+  max-width:850px;
+  margin:auto;
+  display:grid;
+  gap:14px;
+}
+
+.lesson{
+  display:grid;
+  grid-template-columns:55px 1fr;
+  gap:15px;
+  padding:21px;
+  border:1px solid var(--line);
+  border-radius:17px;
+  background:rgba(255,255,255,.025);
+}
+
+.lesson-num{
+  width:45px;
+  height:45px;
+  display:grid;
+  place-items:center;
+  border-radius:13px;
+  background:rgba(72,229,139,.1);
+  color:var(--green);
+  font-weight:1000;
+}
+
+.lesson h3{
+  margin:0 0 4px;
+}
+
+.lesson p{
+  margin:0;
+  color:var(--muted);
+}
+
+/* CARREIRA */
+
+.career{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.career .card{
+  text-align:center;
+}
+
+/* OFERTA */
+
+.help{
+  padding:42px 30px;
+  border-radius:27px;
+  border:1px solid rgba(255,215,106,.24);
+  background:
+    radial-gradient(circle at 100% 0%,rgba(255,215,106,.12),transparent 35%),
+    linear-gradient(135deg,#151d13,#0b1710);
+  text-align:center;
+}
+
+.help-label{
+  color:var(--gold);
+  font-size:12px;
+  font-weight:1000;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.help h2{
+  max-width:750px;
+  margin:10px auto;
+  font-size:clamp(30px,5vw,48px);
+  line-height:1.05;
+}
+
+.help p{
+  max-width:680px;
+  margin:auto;
+  color:var(--muted);
+}
+
+/* SERVIÇO */
+
+.service{
+  max-width:900px;
+  margin:auto;
+  padding:32px;
+  border:1px solid rgba(72,229,139,.25);
+  border-radius:26px;
+  background:linear-gradient(145deg,#10251a,#0a1510);
+  box-shadow:0 30px 90px rgba(0,0,0,.4);
+}
+
+.service-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+}
+
+.service h2{
+  margin:0;
+  font-size:32px;
+}
+
+.service-sub{
+  color:var(--muted);
+  margin:7px 0 0;
+}
+
+.price{
+  text-align:right;
+  white-space:nowrap;
+}
+
+.price small{
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+}
+
+.price strong{
+  color:var(--green);
+  font-size:27px;
+}
+
+.check-list{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:26px 0;
+}
+
+.check-list div{
+  color:#d8e5dd;
+  font-size:14px;
+}
+
+.check-list div::before{
+  content:"✓";
+  margin-right:9px;
+  color:var(--green);
+  font-weight:1000;
+}
+
+.note{
+  color:#7f9288;
+  font-size:12px;
+  text-align:center;
+  margin-top:12px;
+}
+
+/* FAQ */
+
+.faq{
+  max-width:850px;
+  margin:auto;
+}
+
+details{
+  padding:19px 0;
+  border-bottom:1px solid var(--line);
+}
+
+summary{
+  cursor:pointer;
+  list-style:none;
+  font-weight:850;
+}
+
+summary::-webkit-details-marker{
+  display:none;
+}
+
+summary::after{
+  content:"+";
+  float:right;
+  color:var(--green);
+  font-size:21px;
+}
+
+details[open] summary::after{
+  content:"−";
+}
+
+details p{
+  margin:12px 0 0;
+  color:var(--muted);
+}
+
+/* CTA FINAL */
+
+.final{
+  text-align:center;
+  padding:75px 0;
+}
+
+.final h2{
+  font-size:clamp(30px,5vw,50px);
+  line-height:1.05;
+  margin:0 0 12px;
+}
+
+.final p{
+  max-width:650px;
+  margin:auto;
+  color:var(--muted);
+}
+
+/* FOOTER */
+
+footer{
+  padding:35px 0 45px;
+  border-top:1px solid var(--line);
+  text-align:center;
+  color:#718279;
+  font-size:13px;
+}
+
+/* CELULAR */
+
+@media(max-width:760px){
+
+  .hero{
+    padding:60px 0 50px;
+  }
+
+  .nav-links a{
+    display:none;
+  }
+
+  .grid,
+  .career{
+    grid-template-columns:1fr;
+  }
+
+  .module ul{
+    padding-left:60px;
+  }
+
+  .service-top{
+    display:block;
+  }
+
+  .price{
+    margin-top:15px;
+    text-align:left;
+  }
+
+  .check-list{
+    grid-template-columns:1fr;
+  }
+
+  .help{
+    padding:32px 20px;
+  }
+
+  .lesson{
+    grid-template-columns:48px 1fr;
+  }
+}
+</style>
+</head>
+
+
+<body>
+
+<header>
+
+  <div class="container nav">
+
+    <a class="logo" href="index.html">
+      PDX<span>HZ</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Página inicial</a>
+      <a href="#curso">Curso</a>
+      <a href="#modulos">Módulos</a>
+      <a href="#servico">Meu serviço</a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="badge">
+      🚀 CURSO COMPLETO • CRIAÇÃO DE SITES
+    </div>
+
+    <h1>
+      Aprenda a criar sites,
+      <span>publicar e trabalhar com eles</span>
+    </h1>
+
+    <p>
+      Um treinamento completo para sair do zero,
+      aprender a criar páginas, colocar seus projetos
+      no ar e entender como transformar essa habilidade
+      em um serviço.
+    </p>
+
+    <div class="actions">
+
+      <a class="btn primary" href="#curso">
+        COMEÇAR O CURSO ↓
+      </a>
+
+      <a class="btn secondary" href="#servico">
+        Quero um site pronto
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- O QUE APRENDE -->
+
+<section class="section" id="curso">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        O que você vai aprender
+      </h2>
+
+      <p>
+        Não é apenas sobre escrever código.
+        Você vai conhecer o processo completo de um projeto de site.
+      </p>
+
+    </div>
+
+
+    <div class="grid">
+
+      <article class="card">
+
+        <div class="icon">🌐</div>
+
+        <h3>
+          Criar um site
+        </h3>
+
+        <p>
+          Aprenda a montar a estrutura de uma página
+          desde o começo.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="icon">💻</div>
+
+        <h3>
+          HTML e CSS
+        </h3>
+
+        <p>
+          Entenda os principais elementos usados
+          para construir e estilizar páginas.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="icon">🎨</div>
+
+        <h3>
+          Design
+        </h3>
+
+        <p>
+          Organize cores, fontes, espaços, cards
+          e seções para criar uma aparência profissional.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="icon">📱</div>
+
+        <h3>
+          Responsividade
+        </h3>
+
+        <p>
+          Aprenda a adaptar seu site para celular,
+          tablet e computador.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="icon">🔘</div>
+
+        <h3>
+          Botões e links
+        </h3>
+
+        <p>
+          Configure links, botões, WhatsApp e outras
+          ações dentro da página.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="icon">🚀</div>
+
+        <h3>
+          Publicação
+        </h3>
+
+        <p>
+          Aprenda o processo de colocar seu projeto
+          online e compartilhar o endereço.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- MÓDULOS -->
+
+<section class="section" id="modulos">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Curso completo em módulos
+      </h2>
+
+      <p>
+        Uma sequência organizada para você estudar
+        e praticar sem se perder.
+      </p>
+
+    </div>
+
+
+    <div class="modules">
+
+
+      <article class="module">
+
+        <div class="module-head">
+
+          <div class="module-number">01</div>
+
+          <div>
+
+            <h3>
+              Começando do zero
+            </h3>
+
+            <p>
+              Entenda o que é um site e como ele funciona.
+            </p>
+
+          </div>
+
+        </div>
+
+        <ul>
+          <li>O que é um site</li>
+          <li>Como uma página funciona</li>
+          <li>Arquivos necessários</li>
+          <li>Como organizar um projeto</li>
+        </ul>
+
+      </article>
+
+
+      <article class="module">
+
+        <div class="module-head">
+
+          <div class="module-number">02</div>
+
+          <div>
+
+            <h3>
+              HTML na prática
+            </h3>
+
+            <p>
+              Crie a estrutura do seu site.
+            </p>
+
+          </div>
+
+        </div>
+
+        <ul>
+          <li>Títulos e textos</li>
+          <li>Imagens</li>
+          <li>Links</li>
+          <li>Botões</li>
+          <li>Seções e containers</li>
+        </ul>
+
+      </article>
+
+
+      <article class="module">
+
+        <div class="module-head">
+
+          <div class="module-number">03</div>
+
+          <div>
+
+            <h3>
+              CSS e design
+            </h3>
+
+            <p>
+              Transforme uma página simples em uma página bonita.
+            </p>
+
+          </div>
+
+        </div>
+
+        <ul>
+          <li>Cores</li>
+          <li>Fontes</li>
+          <li>Espaçamentos</li>
+          <li>Cards</li>
+          <li>Sombras e bordas</li>
+          <li>Layout profissional</li>
+        </ul>
+
+      </article>
+
+
+      <article class="module">
+
+        <div class="module-head">
+
+          <div class="module-number">04</div>
+
+          <div>
+
+            <h3>
+              Site para celular
+            </h3>
+
+            <p>
+              Faça o projeto funcionar em telas diferentes.
+            </p>
+
+          </div>
+
+        </div>
+
+        <ul>
+          <li>Responsividade</li>
+          <li>Menus para celular</li>
+          <li>Tamanho dos textos</li>
+          <li>Botões adaptados</li>
+          <li>Testes no celular</li>
+        </ul>
+
+      </article>
+
+
+      <article class="module">
+
+        <div class="module-head">
+
+          <div class="module-number">05</div>
+
+          <div>
+
+            <h3>
+              Interação e contato
+            </h3>
+
+            <p>
+              Faça o visitante conseguir agir dentro da página.
+            </p>
+
+          </div>
+
+        </div>
+
+        <ul>
+          <li>Botões</li>
+          <li>Links externos</li>
+          <li>WhatsApp</li>
+          <li>Chamadas para ação</li>
+          <li>Formas de contato</li>
+        </ul>
+
+      </article>
+
+
+      <article class="module">
+
+        <div class="module-head">
+
+          <div class="module-number">06</div>
+
+          <div>
+
+            <h3>
+              Publicando seu site
+            </h3>
+
+            <p>
+              Aprenda a tirar o projeto do computador e colocar online.
+            </p>
+
+          </div>
+
+        </div>
+
+        <ul>
+          <li>Organização dos arquivos</li>
+          <li>GitHub</li>
+          <li>GitHub Pages</li>
+          <li>Publicação</li>
+          <li>Atualização do projeto</li>
+        </ul>
+
+      </article>
+
+
+      <article class="module">
+
+        <div class="module-head">
+
+          <div class="module-number">07</div>
+
+          <div>
+
+            <h3>
+              Corrigindo problemas
+            </h3>
+
+            <p>
+              Aprenda a encontrar erros comuns.
+            </p>
+
+          </div>
+
+        </div>
+
+        <ul>
+          <li>Links que não funcionam</li>
+          <li>Imagens que não aparecem</li>
+          <li>Problemas no celular</li>
+          <li>Arquivos no lugar errado</li>
+          <li>Atualizações</li>
+        </ul>
+
+      </article>
+
+
+      <article class="module">
+
+        <div class="module-head">
+
+          <div class="module-number">08</div>
+
+          <div>
+
+            <h3>
+              Criando sites para clientes
+            </h3>
+
+            <p>
+              Entenda como transformar o conhecimento em serviço.
+            </p>
+
+          </div>
+
+        </div>
+
+        <ul>
+          <li>Como entender o pedido do cliente</li>
+          <li>Como montar um projeto</li>
+          <li>Como apresentar o trabalho</li>
+          <li>Como definir o que será entregue</li>
+          <li>Como organizar alterações</li>
+        </ul>
+
+      </article>
+
+
+      <article class="module">
+
+        <div class="module-head">
+
+          <div class="module-number">09</div>
+
+          <div>
+
+            <h3>
+              Divulgação e vendas
+            </h3>
+
+            <p>
+              Aprenda maneiras de apresentar seu trabalho.
+            </p>
+
+          </div>
+
+        </div>
+
+        <ul>
+          <li>Montar um portfólio</li>
+          <li>Mostrar seus projetos</li>
+          <li>Abordar possíveis clientes</li>
+          <li>Apresentar seu serviço</li>
+          <li>Organizar seu atendimento</li>
+        </ul>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- JORNADA -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Sua jornada
+      </h2>
+
+      <p>
+        O objetivo é terminar sabendo executar
+        um projeto completo.
+      </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+      <div class="lesson">
+
+        <div class="lesson-num">1</div>
+
+        <div>
+
+          <h3>
+            Aprender
+          </h3>
+
+          <p>
+            Entenda os conceitos e acompanhe os exemplos.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="lesson">
+
+        <div class="lesson-num">2</div>
+
+        <div>
+
+          <h3>
+            Praticar
+          </h3>
+
+          <p>
+            Reproduza os exemplos e comece a criar suas próprias páginas.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="lesson">
+
+        <div class="lesson-num">3</div>
+
+        <div>
+
+          <h3>
+            Publicar
+          </h3>
+
+          <p>
+            Coloque um projeto real no ar e teste em diferentes dispositivos.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="lesson">
+
+        <div class="lesson-num">4</div>
+
+        <div>
+
+          <h3>
+            Melhorar
+          </h3>
+
+          <p>
+            Corrija problemas, melhore o visual e deixe suas páginas mais profissionais.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="lesson">
+
+        <div class="lesson-num">5</div>
+
+        <div>
+
+          <h3>
+            Oferecer
+          </h3>
+
+          <p>
+            Use seus projetos como portfólio para apresentar seu trabalho a possíveis clientes.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- O QUE PODE FAZER -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Depois de aprender, você poderá trabalhar em diferentes projetos
+      </h2>
+
+      <p>
+        Sites podem ter objetivos diferentes.
+      </p>
+
+    </div>
+
+
+    <div class="career">
+
+      <article class="card">
+
+        <div class="icon">🍔</div>
+
+        <h3>
+          Negócios locais
+        </h3>
+
+        <p>
+          Páginas para restaurantes, lanchonetes,
+          barbearias, lojas e outros negócios.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="icon">🛍️</div>
+
+        <h3>
+          Produtos
+        </h3>
+
+        <p>
+          Páginas para apresentar produtos,
+          serviços e ofertas.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="icon">📣</div>
+
+        <h3>
+          Landing pages
+        </h3>
+
+        <p>
+          Páginas focadas em apresentar uma oferta
+          e direcionar o visitante para uma ação.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="icon">👤</div>
+
+        <h3>
+          Portfólios
+        </h3>
+
+        <p>
+          Sites para profissionais apresentarem
+          seus trabalhos e projetos.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="icon">📱</div>
+
+        <h3>
+          Páginas de contato
+        </h3>
+
+        <p>
+          Páginas simples para facilitar o contato
+          entre pessoas e negócios.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="icon">💼</div>
+
+        <h3>
+          Serviços
+        </h3>
+
+        <p>
+          Apresente serviços de forma organizada
+          e profissional.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- NÃO CONSEGUIU -->
+
+<section class="section" id="ajuda">
+
+  <div class="container">
+
+    <div class="help">
+
+      <div class="help-label">
+        Não conseguiu fazer sozinho?
+      </div>
+
+      <h2>
+        Eu faço o seu site para você.
+      </h2>
+
+      <p>
+        O curso é para você aprender. Mas se você tentou,
+        acompanhou as aulas e ainda prefere deixar o trabalho
+        nas mãos de alguém, também posso criar seu site.
+      </p>
+
+      <div class="actions">
+
+        <a class="btn primary" href="#servico">
+          COMPRAR TRABALHO DE SITE →
+        </a>
+
+        <a
+          class="btn secondary"
+          href="https://wa.me/5548988473049?text=Ol%C3%A1!%20Vi%20o%20curso%20e%20quero%20saber%20sobre%20a%20cria%C3%A7%C3%A3o%20do%20meu%20site."
+          target="_blank"
+          rel="noopener"
+        >
+          Falar no WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SERVIÇO -->
+
+<section class="section" id="servico">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Quer deixar essa parte comigo?
+      </h2>
+
+      <p>
+        Solicite a criação do seu site.
+      </p>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-top">
+
+        <div>
+
+          <h2>
+            💻 Criação de Site
+          </h2>
+
+          <p class="service-sub">
+            Um site personalizado de acordo com
+            as informações e objetivo do seu projeto.
+          </p>
+
+        </div>
+
+
+        <div class="price">
+
+          <small>
+            VALOR
+          </small>
+
+          <strong>
+            Consulte
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="check-list">
+
+        <div>
+          Layout personalizado
+        </div>
+
+        <div>
+          Visual responsivo
+        </div>
+
+        <div>
+          Compatível com celular
+        </div>
+
+        <div>
+          Botões configurados
+        </div>
+
+        <div>
+          WhatsApp e links
+        </div>
+
+        <div>
+          Seções organizadas
+        </div>
+
+        <div>
+          Textos e imagens
+        </div>
+
+        <div>
+          Publicação do projeto
+        </div>
+
+      </div>
+
+
+      <a
+        class="btn primary"
+        style="width:100%"
+        href="https://wa.me/5548988473049?text=Ol%C3%A1!%20Quero%20comprar%20o%20trabalho%20de%20site.%20Quero%20saber%20o%20valor%20e%20como%20funciona."
+        target="_blank"
+        rel="noopener"
+      >
+        🛒 COMPRAR TRABALHO DE SITE
+      </a>
+
+
+      <div class="note">
+        Você será direcionado ao WhatsApp para
+        conversar sobre o projeto e combinar os detalhes.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Perguntas frequentes
+      </h2>
+
+    </div>
+
+
+    <div class="faq">
+
+      <details>
+
+        <summary>
+          Preciso saber programação?
+        </summary>
+
+        <p>
+          Não. O conteúdo foi pensado para quem está começando.
+          Você aprende os conceitos gradualmente e pratica durante o processo.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Posso acompanhar pelo celular?
+        </summary>
+
+        <p>
+          Sim, você pode acompanhar boa parte do conteúdo pelo celular.
+          Para algumas tarefas de desenvolvimento, porém, um computador
+          pode facilitar bastante.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Vou aprender somente HTML?
+        </summary>
+
+        <p>
+          Não. A proposta é abordar o processo mais amplo:
+          estrutura, visual, responsividade, links, publicação,
+          manutenção e noções de trabalho com clientes.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Posso criar sites para outras pessoas?
+        </summary>
+
+        <p>
+          O curso mostra como organizar um projeto e apresentar
+          seu trabalho. Você poderá usar o conhecimento adquirido
+          para criar seus próprios projetos e oferecer serviços,
+          respeitando aquilo que você consegue entregar.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          E se eu não conseguir fazer meu site?
+        </summary>
+
+        <p>
+          Você pode entrar em contato pelo botão de criação de site
+          e conversar sobre a possibilidade de contratar o serviço.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          O site pode ser personalizado?
+        </summary>
+
+        <p>
+          Sim. O projeto pode ser adaptado com cores, textos,
+          imagens, seções, botões e outras necessidades do cliente.
+        </p>
+
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA FINAL -->
+
+<section class="final">
+
+  <div class="container">
+
+    <h2>
+      Comece a aprender hoje.
+    </h2>
+
+    <p>
+      Aprenda a criar, publicar e melhorar seus próprios sites.
+      E, quando precisar, você também pode solicitar a criação
+      do seu projeto.
+    </p>
+
+    <div class="actions">
+
+      <a class="btn primary" href="#curso">
+        COMEÇAR O CURSO
+      </a>
+
+      <a class="btn secondary" href="#servico">
+        QUERO MEU SITE PRONTO
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+    © 2026 PDXHZ • Curso completo de criação de sites
+  </div>
+
+</footer>
+
+</body>
+</html>
